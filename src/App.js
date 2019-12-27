@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <img src={'https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
+      <img className='bigimg' src={'https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
      <div className="Top-left"> 
        <a href="https://www.facebook.com/basmakuhail2003">
           <img className='image' src={'https://www.facebook.com/images/fb_icon_325x325.png'} />
