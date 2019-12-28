@@ -9,13 +9,6 @@
   color: black;
   
 }
-/* .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-  */
 
 .image{
   width: 40px;
@@ -53,7 +46,6 @@
 
 .bigimg{
 
-  height:50%;
   width: 100%;
 
 }
