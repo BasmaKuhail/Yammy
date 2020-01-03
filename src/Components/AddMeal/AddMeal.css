@@ -1,0 +1,65 @@
+.input1{
+    width: 300px;
+    height: 30px;
+    border-Radius: 5px;
+    margin:1px;
+
+
+}
+
+.input2{
+    width: 300px;
+    height: 100px;
+    border-Radius: 5px;
+    margin:1px;
+
+
+}
+
+.input3{
+    width: 300px;
+    height: 150px;
+    border-Radius: 5px;
+    margin:1px;
+
+
+}
+.input4{
+    width: 300px;
+    height: 30px;
+    border-Radius: 5px;
+    margin:1px;
+
+
+}
+
+.text1{
+    font-size: 21px;
+    margin: 10px;
+}
+
+.text2{
+    font-size: 16px;
+    margin: 10px;
+}
+.text3{
+    font-size: 19px;
+    margin: 10px;
+}
+.text4{
+    font-size: 17px;
+    margin: 10px;
+}
+
+.text5{
+    font-size: 20px;
+    margin: 15px;
+}
+.button1{
+    margin: 10px;
+    border-Radius: 10px;
+    padding: 9px;
+    position: absolute;
+    bottom: 0px;
+
+}
