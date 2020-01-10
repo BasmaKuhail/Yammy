@@ -2,25 +2,25 @@
     width: 300px;
     height: 30px;
     border-Radius: 5px;
-    margin:1px;
+    margin:5px;
 
 
 }
 
 .input2{
     width: 300px;
-    height: 100px;
+    height: 60px;
     border-Radius: 5px;
-    margin:1px;
+    margin:10px;
 
 
 }
 
 .input3{
     width: 300px;
-    height: 150px;
+    height: 90px;
     border-Radius: 5px;
-    margin:1px;
+    margin:10px;
 
 
 }
@@ -28,7 +28,7 @@
     width: 300px;
     height: 30px;
     border-Radius: 5px;
-    margin:1px;
+    margin:10px;
 
 
 }
@@ -38,18 +38,6 @@
     margin: 10px;
 }
 
-.text2{
-    font-size: 16px;
-    margin: 10px;
-}
-.text3{
-    font-size: 19px;
-    margin: 10px;
-}
-.text4{
-    font-size: 17px;
-    margin: 10px;
-}
 
 .text5{
     font-size: 20px;
@@ -57,9 +45,13 @@
 }
 .button1{
     margin: 10px;
-    border-Radius: 10px;
-    padding: 9px;
-    position: absolute;
-    bottom: 0px;
+    border-Radius: 5px;
+    padding: 7px;
+}
+
+.link{
+    margin: 5px;
+    padding:10px;
+    font-size: 18px;
 
 }

@@ -19,9 +19,7 @@ const firebaseConfig = {
   };
 
   
-// const fire= 
 firebase.initializeApp(firebaseConfig);
-// export default fire; 
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

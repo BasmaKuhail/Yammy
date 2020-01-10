@@ -1,0 +1,18 @@
+.media{
+    height: 140
+  }
+
+.card{
+  max-width: 33.33%;
+  max-height: 33.33%;
+}
+
+.media{
+  height: 300px;
+  width: 400;
+  padding-top: '65.25%';
+
+}
+.expandOpen{
+  transform: 'rotate(180deg)';
+}
