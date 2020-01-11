@@ -3,8 +3,10 @@
   }
 
 .card{
-  max-width: 33.33%;
-  max-height: 33.33%;
+  max-width: 33%;
+  max-height: 33%;
+  float: left;
+  width:100%;
 }
 
 .media{

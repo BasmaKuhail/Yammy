@@ -31,7 +31,7 @@ class Login extends Component{
             this.state.email,
             this.state.password,
             ).then(()=>{
-             this.props.history.push('/cheif')
+                this.props.history.push('/cheif')
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
@@ -64,6 +64,8 @@ class Login extends Component{
                         <button onClick={this.signin} className="yellowButton">Login</button>
                         {/* <Link onClick={this.signin}>Login</Link> */}
 
+                <div className='link'>
+                    <button onClick={this.signin}>LogIn</button>
                 </div>
 
             </div>

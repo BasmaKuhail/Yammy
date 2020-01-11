@@ -1,6 +1,7 @@
 import React  ,{Component}from 'react';
 import Cards from './Cards.js'
 import './HomePage.css';
+import Cards from './CardHome.js';
 
 
   class Home extends Component{

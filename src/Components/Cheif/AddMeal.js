@@ -43,6 +43,11 @@ class Add extends Component{
             image: image,
 
         })
+        .then( (docRef) =>{
+            this.props.history.push('/myMeals')
+
+        })
+
 
     }
 
