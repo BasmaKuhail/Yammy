@@ -20,7 +20,7 @@ import * as firebase from 'firebase';
         let pathname = window.location.pathname
         if (user &&pathname =='/Login') {
           console.log("user" , user , user.uid)
-          window.location.pathname = '/'
+         // window.location.pathname = '/'
         } else {
           console.log("not logged in ")
         }

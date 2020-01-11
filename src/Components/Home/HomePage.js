@@ -13,7 +13,7 @@ import './HomePage.css';
 
           <div  class="container">
             <img className='bigimg' 
-            src={'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+            src={'https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-food-website-3.jpg'}
             />
           </div>
 
@@ -35,10 +35,10 @@ import './HomePage.css';
           </div>
 
           <div className='centered'>
-            <h1> Yammy!</h1>
+            <h1 className="title"> YUMMY!</h1>
             
             <div className='search'>
-            <input className='input' placeholder=" 🔍 serch for meal"></input>
+            <input className='input-search' placeholder=" 🔍 serch for meal"></input>
             <button className='searchButton'>
               <img 
               className='searchImage' 

@@ -31,16 +31,18 @@
   }
   
 
-  .text{
+  .title{
     color:#EFE216;
     font-size:60px; 
     /* font-family: 'Open Sans'; */
 
   }
-  .input{
+
+
+  .input-search{
     width: 350px;
     height: 30px;
-    border-Radius: 15px;
+    border-Radius: 10px;
   }
   .searchButton{
     margin:0px;
@@ -93,7 +95,7 @@
   
   .centered {
     position: absolute;
-    top: 300px;
+    top: 8px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -121,3 +123,8 @@
     width:100%;
   }
 
+
+  .button{
+    background-color: yellow;
+    font-size: 15; 
+  }
