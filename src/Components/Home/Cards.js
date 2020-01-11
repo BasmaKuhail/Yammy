@@ -1,54 +1,71 @@
 import React, { Component } from 'react';
-import './Cards2.css'
+import * as firebase from 'firebase';
+import './Cards2.css';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
 import CardHeader from '@material-ui/core/CardHeader';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardMedia from '@material-ui/core/CardMedia';
 
+
 class Cards extends Component{
+
+    state={
+      meals:[]
+    }
+
+    componentDidMount(){
+        const db = firebase.firestore();
+        const {meals} = this.state;
+        let me = this;
+    
+        db.collection("meals").get().then(function(querySnapshot) {
+            querySnapshot.forEach((doc)=> {
+                console.log(doc.id, " => ", doc.data());
+                meals.push(doc.data())
+                me.setState(meals)
+                
+            });
+        });
+    }
+    
     render(){
+
+        const {meals}= this.state;
+        console.log(this.state.meals)
+
+        
         return(
-            <div>
 
+                
                 <div>
+                    {meals.map((meal)=>
+
                     <Card className='card'>
-
                         <CardActionArea>
-
                             <CardContent>
-                                <CardHeader
-                                    avatar={
-                                    <Avatar aria-label="recipe" className='avatar'>
-                                        R
-                                    </Avatar>
-                                    }
-                                        
-                                    title="Pizza"
-                                    subheader="By: mahmood"
+                            <CardHeader 
+                                title= {meal.mealName}
                             />
 
                             <CardMedia
                                 className='media'
-                                image="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                image={meal.image}
                             />
 
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    can make your day!
-                                </Typography>
                             </CardContent>
 
                         </CardActionArea>
 
                         <CardActions>
 
-                            <Button size="small" color="primary">
+
+                            <Button size="small" color="primary"
+                             onClick={()=>this.props.history.push('/meal')}>
                             Learn More
                             </Button>
 
@@ -56,13 +73,20 @@ class Cards extends Component{
                                 <FavoriteIcon />
                             </IconButton>
                         </CardActions>
-                    </Card>
-                    </div>
-        
-        </div>
-    )
-   
 
-}}
+
+                    </Card>
+                    
+                )}
+                    </div>
+                
+
+
+            
+        );
+
+    
+    }}
+
 
 export default Cards;

@@ -21,37 +21,40 @@ class Cards extends Component{
     componentDidMount(){
         const db = firebase.firestore();
         const {meals} = this.state;
+        let me = this;
     
         db.collection("meals").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                // console.log(doc.id, " => ", doc.data());
+            querySnapshot.forEach((doc)=> {
+                console.log(doc.id, " => ", doc.data());
                 meals.push(doc.data())
+                me.setState(meals)
                 
             });
         });
     }
     
     render(){
-        console.log(this.state.meals)
 
         const {meals}= this.state;
+        console.log(this.state.meals)
 
         
         return(
 
                 
                 <div>
+                    {meals.map((meal)=>
 
                     <Card className='card'>
                         <CardActionArea>
                             <CardContent>
                             <CardHeader 
-                                title= 'fg4tb5'
+                                title= {meal.mealName}
                             />
 
                             <CardMedia
                                 className='media'
-                                image=''
+                                image={meal.image}
                             />
 
                             </CardContent>
@@ -73,7 +76,7 @@ class Cards extends Component{
 
                     </Card>
                     
-                
+                )}
                     </div>
                 
 
