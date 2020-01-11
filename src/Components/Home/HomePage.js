@@ -15,14 +15,6 @@ import Cards from './Cards.js';
             <img className='bigimg' 
             src={'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
             />
-            <p class="overlay">
-              this site is a way to learn how to cook, you can also add meals if you are a chief,
-              you can save your favourite meals by adding the to faverouts, and you will find much 
-              more fun things to do....
-              made by: Basma & Zayan Don't be shy and tell us what you think by contacting us on 
-              facebook, twiter
-
-            </p>
           </div>
 
           <div className="Top-left"> 
@@ -53,16 +45,11 @@ import Cards from './Cards.js';
               src={'https://raw.githubusercontent.com/google/material-design-icons/master/action/2x_web/ic_search_black_48dp.png'} />
             </button>
             </div>
-            <div >
-              <button className='filter'>breakfast</button>
-              <button className='filter'>lunch</button>
-              <button className='filter'>diner</button>
-              <button className='filter'>vage</button>
-
-            </div>
+            
           </div>
-          
-            <Cards/>
+            <div className='cards'>
+            <Cards {...this.props}/>
+            </div>
              
           </div>
           
