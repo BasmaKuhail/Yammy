@@ -6,16 +6,19 @@ import * as serviceWorker from './serviceWorker';
 
 import * as firebase from 'firebase'; 
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBd-dOo6POAQrM_U-ML8y7m0iitQD_AzEA",
-  authDomain: "recipes-b62d1.firebaseapp.com",
-  databaseURL: "https://recipes-b62d1.firebaseio.com",
-  projectId: "recipes-b62d1",
-  storageBucket: "recipes-b62d1.appspot.com",
-  messagingSenderId: "289500571116",
-  appId: "1:289500571116:web:0bbe23ed371cf901504cc9",
-  measurementId: "G-G8HJV4QVDM"
+  apiKey: "AIzaSyCXX8hp81_yiptvIDyKch-i_F39nBe4FcM",
+  authDomain: "yammy-c473e.firebaseapp.com",
+  databaseURL: "https://yammy-c473e.firebaseio.com",
+  projectId: "yammy-c473e",
+  storageBucket: "yammy-c473e.appspot.com",
+  messagingSenderId: "635335262399",
+  appId: "1:635335262399:web:84214970715909beb2460a",
+  measurementId: "G-Q1J13KHJYY"
 };
+
+
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));

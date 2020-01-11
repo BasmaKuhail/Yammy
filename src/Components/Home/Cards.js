@@ -14,45 +14,43 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+const useStyles = makeStyles(theme => ({
+    card: {
+      maxWidth: 600,
+    },
+    media: {
+      width:350,
+      height: 30,
+      paddingTop: '65.25%',
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    avatar: {
+      backgroundColor: red[500],
+    },
+  }));
+  
+  
 
 
+function Cards(){
+    const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
-class Cards extends Component{
-    
-    render(){
-        const useStyles = makeStyles(theme => ({
-            card: {
-              maxWidth: 600,
-            },
-            media: {
-              width:350,
-              height: 30,
-              paddingTop: '65.25%',
-            },
-            expand: {
-              transform: 'rotate(0deg)',
-              marginLeft: 'auto',
-              transition: theme.transitions.create('transform', {
-                duration: theme.transitions.duration.shortest,
-              }),
-            },
-            expandOpen: {
-              transform: 'rotate(180deg)',
-            },
-            avatar: {
-              backgroundColor: red[500],
-            },
-          }));
-          
-          const classes = useStyles();
-          const [expanded, setExpanded] = React.useState(false);
-        
-          const handleExpandClick = () => {
-            setExpanded(!expanded);
-          };
-        
-        return(
-            <div className='cards'>
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+    return(
+        <div>
+        <div className='cards'>
                 <div className='cards'>
                     <Card className={classes.card}>
                     <CardHeader
@@ -244,9 +242,8 @@ class Cards extends Component{
                 </div>    
             </div>
 
-        )
-    }
-
+        </div>
+    )
 }
 
 export default Cards;

@@ -1,14 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Home from './Components/Home/HomePage.js';
 import Add from './Components/AddMeal/AddMeal.js'
-import SignUp from './components/signUp';
-import LoggedPage from './components/loggedPage';
+import SignUp from './Components/signUp';
+import LoggedPage from './Components/loggedIn/loggedPage.js';
 import {Router, Switch, BrowserRouter, Route} from 'react-router-dom'; 
-import Login from './components/login';
+import Login from './Components/login';
+import * as firebase from 'firebase';
 
 
 
-function App() {
+  class App extends Component{
+
+    componentWillMount(){
+
+
+      firebase.auth().onAuthStateChanged((user) =>{
+        let pathname = window.location.pathname
+        if (user &&pathname =='/Login') {
+          console.log("user" , user , user.uid)
+          window.location.pathname = '/'
+        } else {
+          console.log("not logged in ")
+        }
+      });
+
+
+    }
+  render(){
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,7 +45,7 @@ function App() {
   
 
     </div>
-  );
+  );}
 }
 
 export default App;

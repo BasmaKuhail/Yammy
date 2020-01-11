@@ -12,11 +12,11 @@ class Home extends Component{
 
     <div  class="container">
       <img className='bigimg' src={'https://image.freepik.com/free-photo/slice-delicious-pizza-with-ingredients-textured-wooden-background_23-2147926094.jpg'}/>
-      {/* <div class="overlay">
+      <div class="overlay">
         Yummy is a website that gives you many recipes.Cheives can use it to share their own recipes.
         <br/>
         Recipes in Yummy are filtered by many things. Discover Yummy now!
-       </div> */}
+       </div>
     </div>
 
 

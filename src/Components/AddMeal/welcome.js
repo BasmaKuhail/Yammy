@@ -9,7 +9,6 @@ class Welcome extends Component {
 
     render(){
         return(<div>
-
             logged in 
         </div>)
     }

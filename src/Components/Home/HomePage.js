@@ -1,4 +1,5 @@
 import React  ,{Component}from 'react';
+import Cards from './Cards.js'
 import './HomePage.css';
 
   class Home extends Component{
@@ -8,9 +9,9 @@ import './HomePage.css';
   return (
     <div className="Home">
 
-      <div  class="container">
+      <div  className="container">
         <img className='bigimg' 
-        src={'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+        src={'https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-food-website-3.jpg'}
         />
         <p class="overlay">
           about us about usabout usabout usabout usabout usabout usabout usabout usabout us
@@ -32,13 +33,15 @@ import './HomePage.css';
           <img className='image' src={'https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale'} />
         </a>
 
+        <button className="button" onClick={()=>this.props.history.push("/SignUp")}>sign up/login</button>
+
    
-        <button className="button" onClick={()=>this.props.history.push('/add')}>Add Meal</button>
+        {/* <button className="button" onClick={()=>this.props.history.push('/add')}>Add Meal</button> */}
       </div>
 
       <div className='centered'>
-        <h1> Yammy!</h1>
-        <input className='input' placeholder=" 🔍 serch for meal"></input> <button>search</button>
+        <h1 className="text"> YUMMY!</h1>
+        <input className='input' placeholder=" 🔍 serch for meal"></input>
         <img className='image' src={'https://img.icons8.com/pastel-glyph/2x/search.png'} />
         <div className="buttons">
           <button className='filter'>breakfast</button>
@@ -47,7 +50,13 @@ import './HomePage.css';
           <button className='filter'>vage</button>
 
         </div>
-      </div>
+        </div>
+          <div className='cards'>
+          <Cards/>
+          <Cards/>
+          </div>
+
+     
     </div>
        
   );
