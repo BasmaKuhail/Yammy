@@ -25,7 +25,7 @@ class Login extends Component{
             this.state.email,
             this.state.password
             ).then(()=>{
-                this.props.history.push('/loggedPage')
+                this.props.history.push('/cheif')
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
@@ -66,7 +66,7 @@ class Login extends Component{
                 </div>
 
                 <div className='link'>
-                    <Link to="/cheif" onClick={this.signin}>LogIn</Link>
+                    <button onClick={this.signin}>LogIn</button>
                 </div>
             </div>
         )

@@ -1,6 +1,6 @@
 import React  ,{Component}from 'react';
 import './HomePage.css';
-import Cards from './Cards.js';
+import Cards from './CardHome.js';
 
 
   class Home extends Component{
@@ -35,7 +35,7 @@ import Cards from './Cards.js';
           </div>
 
           <div className='centered'>
-            <h1> Yammy!</h1>
+            <h1> Yummy!</h1>
             
             <div className='search'>
             <input className='input' placeholder=" 🔍 serch for meal"></input>

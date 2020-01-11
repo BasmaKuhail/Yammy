@@ -29,14 +29,24 @@
 
   }
   
-  .button{
+  .buttonAdd{
     border-Radius: 10px;
     padding: 9px;
     border:'none';
     position: absolute;
     top: 8px;
     right: -1140px;
-  
+  }
+
+  .buttonMyMeals{
+    border-Radius: 10px;
+    padding: 9px;
+    border:'none';
+    position: absolute;
+    top: 8px;
+    right: -1050px;
+
+
   }
   
   .Top-left {

@@ -39,7 +39,6 @@
     border-Radius: 100px;
     padding: 0px;
     
-
   }
   .searchImage{
     width:35px;
@@ -84,8 +83,6 @@
     transform: translate(-50%, -50%);
   }
 
-  
-  
   .overlay {
     position: absolute; 
     bottom: 0; 
@@ -105,5 +102,8 @@
 
   .cards{
     width:100%;
+    float: right;
+    display: flex;
+
   }
 

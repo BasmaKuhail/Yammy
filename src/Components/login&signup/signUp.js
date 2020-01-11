@@ -17,7 +17,7 @@ class SignUp extends Component{
     componentDidMount(){
         const db = firebase.firestore();
 
-        db.collection("User").get().then((querySnapshot) => {
+        db.collection("users").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(`${doc.id} => ${doc.data().first}`);
             });
@@ -36,21 +36,44 @@ class SignUp extends Component{
 
     addUser = ()=>{
 
+        const{email, username, type, password}= this.state; 
 
         const db = firebase.firestore();
-        const{email, username, type, password }= this.state; 
+        
+        console.log(email,password ,"email,password")
+        
+        firebase.auth().createUserWithEmailAndPassword(email,password)
+        .then(()=>{
+            db.collection("users").add({
+                Email:email,
+                Username:username,
+                userType: type
+    
+    
+            })
+                .then( (docRef) =>{
+                    if(type =='cheif'){
+                        this.props.history.push('/cheif')
 
-
-        console.log(this.state)
-
-        db.collection("User").add({
-            Email:email,
-            password:password,
-            Username:username,
-            userType: type,
+                    }else{
+                        this.props.history.push('/user')
+                    }
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+            })
+    .catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(error)
+            alert(errorCode)
+            // ...
         })
 
     }
+
       
 render(){
     return(
@@ -117,7 +140,7 @@ render(){
             </div>
                   
             <div className='link'>
-                <Link to="/cheif" onClick={this.addUser}>Sign up</Link>
+                <button  onClick={this.addUser} > sign up</button>
             </div>
             <div className='link'>
                 <Link to="./Login">Already have an account?</Link>

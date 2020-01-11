@@ -1,9 +1,9 @@
 import React  ,{Component}from 'react';
-import './CheifHomePage.css';
+import './UserHomePage.css';
 import Cards from '../Card/Card.js'
 
 
-  class Cheif extends Component{
+  class User extends Component{
     render(){
 
       console.log(this.props)
@@ -31,8 +31,7 @@ import Cards from '../Card/Card.js'
           </a>
 
     
-          <button className="buttonAdd" onClick={()=>this.props.history.push('/add')}>Add Meal</button>
-          <button className="buttonMyMeals" onClick={()=>this.props.history.push('/myMeals')}>My Meals</button>
+          <button className="buttonAdd" onClick={()=>this.props.history.push('/favourite')}>Favourite</button>
 
         </div>
 
@@ -53,4 +52,4 @@ import Cards from '../Card/Card.js'
     }
 }
 
-export default Cheif;
+export default User;
