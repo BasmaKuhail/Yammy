@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
+import { Redirect } from "react-router";
 import * as firebase from 'firebase';
-import {Link} from 'react-router-dom';
 import "./style.css";
+import { AuthContext } from "../../Auth";
+ 
 
 
 class Login extends Component{
@@ -9,10 +11,15 @@ class Login extends Component{
     state={
         email:"",
         password:"",
+        userType:"",
 
     }
 
-    
+    static contextType = AuthContext;
+
+
+
+
     handleChange = ( e)=>{
 
         let key = e.target.name;
@@ -21,7 +28,7 @@ class Login extends Component{
             [key]:e.target.value
         })
 
-    }
+    };
 
     signin = ()=>{
 
@@ -30,8 +37,15 @@ class Login extends Component{
         firebase.auth().signInWithEmailAndPassword(
             this.state.email,
             this.state.password,
-            ).then(()=>{
-                this.props.history.push('/cheif')
+            ).then((res)=>{
+                console.log(res.user.uid)
+                const requied= res.user.uid
+                if (requied.userType=="cheif"){
+                   (this.props.history.push("/cheif"))
+                }else{
+                    (this.props.history.push("/user"))
+                }
+                // this.props.history.push('/cheif')
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
@@ -48,6 +62,16 @@ class Login extends Component{
 
 
     render(){
+        const { currentUser } = this.context
+        if (currentUser) {
+
+
+            console.log(currentUser)
+           // return <Redirect to="/" />;
+        }
+
+        
+
         return(
             <div className="base-container">
 
@@ -62,12 +86,8 @@ class Login extends Component{
                         <input className="input1" type="password" name= "password" placeholder ="    Enter your password" defaultValue={this.state.password} onChange={this.handleChange}/>
                         
                         <button onClick={this.signin} className="yellowButton">Login</button>
-                        {/* <Link onClick={this.signin}>Login</Link> */}
 
-                <div className='link'>
-                    <button onClick={this.signin}>LogIn</button>
-                </div>
-
+            </div>
             </div>
         )
     }

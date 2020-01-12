@@ -25,7 +25,8 @@ class SignUp extends Component{
         
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .then(()=>{
-            db.collection("users").add({
+            let user  =  firebase.auth().currentUser
+            db.collection("users").doc(user.uid).set({
                 Email:email,
                 Username:username,
                 userType: type
