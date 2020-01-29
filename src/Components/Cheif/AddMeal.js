@@ -5,8 +5,16 @@ import * as firebase from 'firebase'
 
 class Add extends Component{
     state={
+        name:"", 
+        contents :"", 
+        recipe:"", 
+         time:"" ,
+         type:"",
+          image:""
+
     }
     componentDidMount(){
+
         const db = firebase.firestore();
 
         db.collection("meals").get().then((querySnapshot) => {
@@ -14,6 +22,11 @@ class Add extends Component{
                 console.log(`${doc.id} => ${doc.data().first}`);
             });
         });
+
+        
+
+
+
     }
     
   
