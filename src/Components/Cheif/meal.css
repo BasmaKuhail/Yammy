@@ -1,0 +1,50 @@
+.meal{
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    background: #fffde7; /* Black background with 0.5 opacity */
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 20px;
+}
+
+.bigimgmeal{
+    height:1300px;
+    width: 1350px;
+}
+.mealImage{
+    position: -ms-page;
+    border-radius: 10px;
+    margin:10px;
+    height: 400px;
+    width: 450px;
+    -webkit-box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
+
+}
+
+.mealName{
+    transform: translate(40%, 50%);
+    font-size: 44px;
+    color: #fb8c00;
+    margin:40px;
+
+}
+
+.contents{
+  font-size: 24px;
+  color: #ffa801;
+
+}
+.mealContents{
+    font-size: 18px;
+}
+
+.space{
+    padding:10px;
+}

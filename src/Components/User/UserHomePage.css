@@ -1,24 +1,23 @@
-.Home {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    position: relative;
-    text-align: center;
-    color: #000000;
-    font-size: 50px;
-  
+
+    .yummyImgUser{
+      position: absolute;
+      top: 300px;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     
-    .image{
-      width: 40px;
-      height: 40px;
-      margin: 3px;
-      padding: 5px;
-      border-radius: 50%;
-      vertical-align: middle;
+    .favourite{
+      background-color: white;
+      width: 120px;
+      border-Radius: 20px;
+      padding: 13px;
+      border: none;
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      font-size: 12px;
     }
+
     
     .input{
       margin:10px;

@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import './meal.css'
 import * as firebase from 'firebase';
+import CardMedia from '@material-ui/core/CardMedia';
+
 
 
 
@@ -29,17 +32,41 @@ class Meal extends Component{
 
         return(
             <div>
+            
+                <img className='bigimgmeal' 
+                    src={'https://images.pexels.com/photos/352810/pexels-photo-352810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+                />
+
                 {meals.map((meal)=>
+
+                <div className='meal'>
+                    <h1 className='mealName'>{meal.mealName}</h1>
+                    
+                    <CardMedia
+                        className='mealImage'
+                        image={meal.image}
+                    />
                 <div>
-                <h1>{meal.mealName}</h1>
-                <h5> Contents </h5>
-                <p>{meal.mealContents}</p>
-                <h5>recipe</h5>
-                <p>{meal.recipe}</p>
-                <h5>Time</h5>
-                <p>{meal.timeNeed}</p>
-                <h5>Type</h5>
-                <p>{meal.type}</p>
+                    <div className='space'>
+                        <p className='contents'> CONTENTS:  </p>
+                        <p className='mealContents'>{meal.mealContents}</p>
+                    </div>
+                
+                    <div className='space'>
+                        <p className='contents'>RECIPE:</p>
+                        <p className='mealContents'>{meal.recipe}</p>
+                    </div>
+
+                    <div className='space'>
+                        <p className='contents'>TIME:</p>
+                        <p className='mealContents'>{meal.timeNeed}</p>
+                    </div>
+
+                    <div className='space'>
+                        <p className='contents'>TYPE:</p>
+                        <p className='mealContents'>{meal.type}</p>
+                    </div>
+                </div>
                 </div>
                 )}
             </div>

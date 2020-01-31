@@ -49,6 +49,7 @@ class Cards extends Component{
                         <CardActionArea>
                             <CardContent>
                             <CardHeader 
+                                className='title'
                                 title= {meal.mealName}
                             />
 

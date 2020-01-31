@@ -7,8 +7,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
-import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardMedia from '@material-ui/core/CardMedia';
 
 
@@ -32,6 +30,7 @@ class Cards extends Component{
             });
         });
     }
+
     
     render(){
 
@@ -40,20 +39,21 @@ class Cards extends Component{
 
         
         return(
+ 
+             <div className='TheCard'>
+                {meals.map((meal)=>
 
-                
-                <div>
-                    {meals.map((meal)=>
+                    <Card className='cardHome'>
+                        <CardActionArea className='CardActionArea' >
+                            <CardContent className='cardContent' >
 
-                    <Card className='card'>
-                        <CardActionArea>
-                            <CardContent>
                             <CardHeader 
+                                className='title'
                                 title= {meal.mealName}
                             />
 
                             <CardMedia
-                                className='media'
+                                className='mediaHome'
                                 image={meal.image}
                             />
 
@@ -61,7 +61,7 @@ class Cards extends Component{
 
                         </CardActionArea>
 
-                        <CardActions>
+                        <CardActions className=' CardActions'>
 
 
                             <Button size="small" color="primary"
@@ -75,7 +75,7 @@ class Cards extends Component{
                     </Card>
                     
                 )}
-                    </div>
+            </div>
                 
 
 

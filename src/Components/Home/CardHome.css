@@ -1,22 +1,27 @@
-.media{
-    height: 140
-  }
-
-.card{
-  max-width: 20%;
-  max-height: 20%;
-  float: left;
-  width:100%;
-  /* margin-left: 20px; */
+.TheCard{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
+.cardHome{
+  max-width: 32%;
+  max-height: 32%;
+  margin: 5px;
+  float: left;
+}
 
-.media{
-  height: 300px;
-  width: 400;
+.mediaHome{
+  height: 200px;
+  width: 290px;
   padding-top: '65.25%';
 
 }
 .expandOpen{
   transform: 'rotate(180deg)';
 }
+
+.title{
+text-align: center;
+}
+

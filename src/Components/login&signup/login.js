@@ -1,7 +1,7 @@
 import React, {Component, useContext} from 'react';
 import { Redirect } from "react-router";
 import * as firebase from 'firebase';
-import "./style.css";
+import "./signUpLogIn.css";
 import { AuthContext } from "../../Auth";
  
 
@@ -11,46 +11,55 @@ class Login extends Component{
     state={
         email:"",
         password:"",
-        userType:"",
+        userType: "",
 
     }
 
     static contextType = AuthContext;
 
-
-
-
     handleChange = ( e)=>{
 
         let key = e.target.name;
-
         this.setState({
             [key]:e.target.value
         })
 
     };
+    
 
     signin = ()=>{
-
-        console.log( this.state.email,
+        console.log( 
+            this.state.email,
             this.state.password,)
+
         firebase.auth().signInWithEmailAndPassword(
             this.state.email,
             this.state.password,
             ).then((res)=>{
                 console.log(res.user.uid)
+                
                 const requied= res.user.uid
-                if (requied.userType=="cheif"){
-                   (this.props.history.push("/cheif"))
+                const type= requied.userType
+                const db = firebase.firestore();
+
+                db.collection("users").doc(requied).get().then((querySnapshot)=> {
+                    var userData=querySnapshot.data().userType
+                    querySnapshot.forEach(function(doc) {
+                      
+                    });
+                });
+
+                console.log(type)
+
+                if (type=="cheif"){
+                   (this.props.history.push("/user"))
                 }else{
-                    (this.props.history.push("/user"))
+                    (this.props.history.push("/cheif"))
                 }
-                // this.props.history.push('/cheif')
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-
 
             console.log(error)
             alert(errorCode)
@@ -59,15 +68,10 @@ class Login extends Component{
     };
 
 
-
-
     render(){
         const { currentUser } = this.context
         if (currentUser) {
-
-
             console.log(currentUser)
-           // return <Redirect to="/" />;
         }
 
         
@@ -76,14 +80,28 @@ class Login extends Component{
             <div className="base-container">
 
                 <img className='bigimg' 
-                    src={'https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-food-website-3.jpg'}/>
+                    src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
                 
-                <div className="centered">
+                <div className="signup">
                         <h1 className="header">Login</h1>
 
-                        <input className="input1" type="text" name="email" placeholder ="    Enter your email"  defaultValue={this.state.email} onChange={this.handleChange}/>
+                        <input 
+                        className="input1" 
+                        type="text" 
+                        name="email" 
+                        placeholder =" E-mail"  
+                        defaultValue={this.state.email} 
+                        onChange={this.handleChange}
+                        />
 
-                        <input className="input1" type="password" name= "password" placeholder ="    Enter your password" defaultValue={this.state.password} onChange={this.handleChange}/>
+                        <input 
+                        className="input1" 
+                        type="password" 
+                        name= "password" 
+                        placeholder =" Password" 
+                        defaultValue={this.state.password} 
+                        onChange={this.handleChange}
+                        />
                         
                         <button onClick={this.signin} className="yellowButton">Login</button>
 

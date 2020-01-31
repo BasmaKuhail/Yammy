@@ -57,13 +57,17 @@ class Add extends Component{
 
 
         return(
-            <div className='add'>
-                <h1>Add Meal</h1>
-                <p className='please'>Hi Cheif, it's nice to see you again!</p>
-                <p>________________________________________</p>
-                <div>
+            <div className='base-containerAdd'>
+                <img className='bigimg' 
+                    src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+                />
+                <div className='addMeal'>
+                <h1 className="headerAdd" >Add Meal</h1>
+                <p className='text1Add'>Hi Cheif, it's nice to see you again!</p>
+                
+                <div className="form-groupAdd">
                     <input 
-                        className="input1"  
+                        className="inputAdd"  
                         name="name" 
                         placeholder =" meal name"
                         onChange={this.handleChange}
@@ -71,7 +75,7 @@ class Add extends Component{
                 </div>
                 <div>
                     <input 
-                        className="input2" 
+                        className="inputAdd" 
                         name='contents'
                         placeholder=" meal contents" 
                         onChange={this.handleChange}
@@ -79,7 +83,7 @@ class Add extends Component{
                 </div>
                 <div>
                     <input 
-                        className="input3"  
+                        className="inputAdd"  
                         name= 'recipe' 
                         placeholder=" recipe" 
                         onChange={this.handleChange}
@@ -87,17 +91,26 @@ class Add extends Component{
                 </div>
                 <div>
                     <input 
-                        className="input4" 
+                        className="inputAdd" 
                         name='time'
                         placeholder=" time needed" 
                         onChange={this.handleChange
                     }/>
                 </div>
                 
+                
                 <div>
-                    <text className='text1'>meal type:</text>
+                    <input 
+                        className="inputAdd" 
+                        name='image'
+                        placeholder=" image addres" 
+                        onChange={this.handleChange}
+                    />
+                </div>
+                <div>
+                    <text className='text1Add'>meal type:</text>
 
-                    <text className='text5'>vage</text>
+                    <text className='text4Add'>vage</text>
                     <input 
                         type="radio" 
                         name='type' 
@@ -105,7 +118,7 @@ class Add extends Component{
                         value="vaga"
                     />
 
-                    <text className='text5'>not</text>
+                    <text className='text4Add'>not</text>
                     <input 
                         type="radio" 
                         name='type' 
@@ -114,15 +127,8 @@ class Add extends Component{
                     />
                 </div>
                 <div>
-                    <input 
-                        className="image" 
-                        name='image'
-                        placeholder=" image" 
-                        onChange={this.handleChange
-                    }/>
+                    <button className='yellowButtonAdd' onClick={this.AddMeal}>add Meal</button>
                 </div>
-                <div>
-                    <button className='button1' onClick={this.AddMeal}>add Meal</button>
                 </div>
 
 

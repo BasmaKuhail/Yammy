@@ -1,19 +1,20 @@
-.base-containerAdd{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align:"center";
-    position: relative;
-  
-  }
-  .bigimg{
+.base-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:"center";
+  position: relative;
+
+}
+
+.bigimg{
     width:100%;
     height:100% ;
   }
 
-  .addMeal { 
-    margin-top: 2em;
+  .signup { 
+    margin-top: 5em;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -23,7 +24,8 @@
     padding-right: 50px;
   
   }
-  .headerAdd {
+
+  .header {
     font-size:40px;
     font-family: "Open Sans", sans-serif;
     text-align: center;
@@ -31,7 +33,7 @@
     margin: 10px;
   }
 
-  .yellowButtonAdd {
+  .yellowButton{
     background-color: #ffa801;
     border-Radius: 2px;
     padding: 9px;
@@ -43,23 +45,28 @@
     font-size: 14px;
 
   }
-.inputAdd{
+.input1{
   width:380px;
-  height: 30px;
   padding: 9px;
   margin:10px;
   border: none;
   opacity: 0.9;
   border-Radius: 2px;
   background: white;
+  height: 30px;
 }
-.text1Add {
-    font-size: 20px;
-    padding: 10px;
-  
-  }
-  .text4Add {
-    font-size: 20px;
-    padding: 15px;
-  }
- 
+.please{
+  font-size: 20px;
+}
+.text1{
+  font-size: 20px;
+
+}
+.text4{
+  font-size: 20px;
+  padding: 15px;
+}
+.text7{
+  font-size: 20px;
+  padding: 15px;
+}
