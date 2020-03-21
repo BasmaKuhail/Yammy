@@ -53,6 +53,17 @@
   border-Radius: 2px;
   background: white;
 }
+.textarea{
+  width:380px;
+  height: 100px;
+  padding: 9px;
+  margin:10px;
+  border: none;
+  opacity: 0.9;
+  border-Radius: 2px;
+  background: white;
+
+}
 .text1Add {
     font-size: 20px;
     padding: 10px;

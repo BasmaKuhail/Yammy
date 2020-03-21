@@ -82,12 +82,13 @@ class Add extends Component{
                     />
                 </div>
                 <div>
-                    <input 
-                        className="inputAdd"  
+                    <textarea 
+                        className="textarea"  
                         name= 'recipe' 
                         placeholder=" recipe" 
                         onChange={this.handleChange}
-                    />
+                        >
+                    </textarea>
                 </div>
                 <div>
                     <input 
