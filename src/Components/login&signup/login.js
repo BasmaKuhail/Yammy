@@ -1,18 +1,25 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
+import { Redirect } from "react-router";
 import * as firebase from 'firebase';
-import {Link} from 'react-router-dom';
 import "./style.css";
+import { AuthContext } from "../../Auth";
+import Cards from "../Card/Card";
+ 
 
 
 class Login extends Component{
 
     state={
-        email:"",
-        password:"",
-
+        usersData:[],
+        loggedType:""
+      
     }
 
-    
+    static contextType = AuthContext;
+
+
+
+
     handleChange = ( e)=>{
 
         let key = e.target.name;
@@ -21,23 +28,49 @@ class Login extends Component{
             [key]:e.target.value
         })
 
-    }
+    };
 
     signin = ()=>{
-
         console.log( this.state.email,
             this.state.password,)
         firebase.auth().signInWithEmailAndPassword(
             this.state.email,
             this.state.password,
-            ).then(()=>{
-                this.props.history.push('/cheif')
+            ).then((res)=>{
+                console.log(res.user.uid);
+                
+                const db= firebase.firestore();
+                db.collection("users").where("Email", "==",this.state.email)
+                .get()
+                .then((querySnapshot)=>{
+                    querySnapshot.forEach((doc)=> {
+                        // doc.data() is never undefined for query doc snapshots
+                        console.log(doc.id, " => ", doc.data());
+                        console.log(doc.data().userType);
+                        this.setState({loggedType:doc.data().userType});
+                });
+        
+                })
+                .catch(function(error) {
+                    console.log("Error getting documents: ", error);
+                })
+
+                .then( (docRef) =>{
+                    if(this.state.loggedType=='cheif'){
+                        (this.props.history.push('/cheif'))
+
+                    }else{
+                        (this.props.history.push('/user'))
+                    }
+                })
+
+              
+
+                
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-
-
             console.log(error)
             alert(errorCode)
             // ...
@@ -48,6 +81,16 @@ class Login extends Component{
 
 
     render(){
+        const { currentUser } = this.context
+        if (currentUser) {
+
+
+            console.log(currentUser)
+           // return <Redirect to="/" />;
+        }
+
+        
+
         return(
             <div className="base-container">
 
@@ -62,11 +105,6 @@ class Login extends Component{
                         <input className="input1" type="password" name= "password" placeholder ="    Enter your password" defaultValue={this.state.password} onChange={this.handleChange}/>
                         
                         <button onClick={this.signin} className="yellowButton">Login</button>
-                        {/* <Link onClick={this.signin}>Login</Link> */}
-
-                <div className='link'>
-                    <button onClick={this.signin}>LogIn</button>
-                </div>
 
             </div>
             </div>

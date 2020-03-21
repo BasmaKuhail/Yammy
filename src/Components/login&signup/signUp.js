@@ -25,7 +25,8 @@ class SignUp extends Component{
         
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .then(()=>{
-            db.collection("users").add({
+            let user  =  firebase.auth().currentUser
+            db.collection("users").doc(user.uid).set({
                 Email:email,
                 Username:username,
                 userType: type
@@ -34,10 +35,10 @@ class SignUp extends Component{
             })
                 .then( (docRef) =>{
                     if(type =='cheif'){
-                        this.props.history.push('/cheif')
+                        (this.props.history.push('/cheif'))
 
                     }else{
-                        this.props.history.push('/user')
+                        (this.props.history.push('/user'))
                     }
                 })
                 .catch(function (error) {

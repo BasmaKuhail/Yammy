@@ -12,8 +12,8 @@ import Cards from '../Card/Card.js'
 
         <div  class="container">
           <img className='bigimg' 
-          src={'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-          />
+            src={'https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-food-website-3.jpg'}
+            />
           
         </div>
 
