@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 import CardMedia from '@material-ui/core/CardMedia';
 
 
-
+//this component to show the whole info about the meal when click "learn more" on the card
 
 class Meal extends Component{
     state={
