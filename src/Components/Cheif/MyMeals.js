@@ -84,11 +84,10 @@ class MyMeals extends Component{
                         <CardActions className=' CardActions'>
 
 
-                            <Button size="small" color="primary"
+                            <Button size="small" color="primary" 
                              onClick={()=>this.props.history.push('/meal')}>
                                 Learn More
                             </Button>
-
                         </CardActions>
 
 

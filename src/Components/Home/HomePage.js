@@ -2,12 +2,23 @@ import React  ,{Component}from 'react';
 import './HomePage.css';
 import Cards from './CardHome.js';
 import facebook from '../facebook.svg';
-import instagram from '../instagram.svg'
-import twitter from '../twitter.svg'
-
+import instagram from '../instagram.svg';
+import twitter from '../twitter.svg';
+import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import RestaurantIcon from '@material-ui/icons/Restaurant';
 
 
 class Home extends Component{
+
+  state={
+    search:""
+  }
+  handleChange=(e)=>{
+    let key = e.target.name;
+
+    this.setState({
+        [key]:e.target.value
+    })  }
   render(){
 
     return (
@@ -56,6 +67,18 @@ class Home extends Component{
             
           </div>
           
+          <div classNmae="search">
+            <LocalDiningIcon fontSize="large" />
+            <input 
+                        className="input1" 
+                        type="text " 
+                        name= "search" 
+                        placeholder ="  search a meal" 
+                        defaultValue={this.state.search} 
+                        onChange={this.handleChange}
+            />
+          </div>
+
           <div className='cards'>
               <Cards {...this.props}/>
           </div>

@@ -42,7 +42,7 @@ class App extends Component{
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
               <PrivateRoute path="/cheif" component={Cheif}/>
-              <PrivateRoute path="/meal" component={Meal}/>
+              <Route path="/meal" component={Meal}/>
               <PrivateRoute path='/myMeals' component={MyMeals}/>
               <PrivateRoute path='/user' component={User}/>
               <PrivateRoute path='/favourite' component={Favourite}/>

@@ -10,29 +10,75 @@ import CardHeader from '@material-ui/core/CardHeader';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardMedia from '@material-ui/core/CardMedia';
+import Meal from '../Cheif/meal'
+
 
 
 class Cards extends Component{
 
     state={
-      meals:[]
+      meals:[],
+      uid:"", 
+      mealId:""
     }
 
     componentDidMount(){
+
         const db = firebase.firestore();
         const {meals} = this.state;
         let me = this;
     
         db.collection("meals").get().then(function(querySnapshot) {
             querySnapshot.forEach((doc)=> {
-                console.log(doc.id, " => ", doc.data());
-                meals.push(doc.data())
+                const fetchedMealData = {
+                    id: doc.id,
+                    ...doc.data()
+                  };
+                meals.push(fetchedMealData);
                 me.setState(meals)
                 
             });
         });
+
+
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              // User logged in already or has just logged in.
+              console.log(user.uid);
+              this.setState({uid:user.uid})
+            } else {
+              // User not logged in or has just logged out.
+            };
+          });
     }
-    
+
+    getMealId=(clickedMealId)=> {
+        this.setState({mealId: clickedMealId})
+        console.log(this.state.mealId)
+
+        const db = firebase.firestore();
+
+        const {uid} = this.state;
+        console.log(this.state)
+
+        db.collection("mealUserId").add({
+            mealId: clickedMealId,
+            currentUserUid:uid
+        
+        })
+        .then( (docRef) =>{
+            this.props.history.push('/favourite')
+
+        })
+
+
+     }
+
+     learnMore=(clickedMealId)=>{
+        this.props.history.push('/meal', {id: clickedMealId})
+     }
+
     render(){
 
         const {meals}= this.state;
@@ -66,13 +112,22 @@ class Cards extends Component{
 
 
                             <Button size="small" color="primary"
-                             onClick={()=>this.props.history.push('/meal')}>
-                            Learn More
+                             onClick={()=>this.learnMore(meal.id)}>
+                                Learn More
                             </Button>
 
-                            <IconButton aria-label="add to favorites" className='expandOpen'>
+                            {/* <IconButton aria-label="add to favorites" className='expandOpen'>
                                 <FavoriteIcon />
-                            </IconButton>
+                            </IconButton> */}
+
+                             <Button size="small" color="primary"
+                             onClick={()=>this.getMealId(meal.id)}>
+                                Add to fav  
+                              </Button>
+
+                            {/* test getting meal id
+                            <h1 name="mealId">{meal.id}</h1> */}
+
                         </CardActions>
 
                     </Card>
