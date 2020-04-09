@@ -9,9 +9,8 @@ import { AuthContext } from "../../Auth";
 class Login extends Component{
 
     state={
-        email:"",
-        password:"",
-        userType: "",
+
+        loggedType:"",
 
     }
 
@@ -28,39 +27,46 @@ class Login extends Component{
     
 
     signin = ()=>{
-        console.log( 
-            this.state.email,
+        console.log( this.state.email,
             this.state.password,)
-
         firebase.auth().signInWithEmailAndPassword(
             this.state.email,
             this.state.password,
             ).then((res)=>{
-                console.log(res.user.uid)
+                console.log(res.user.uid);
                 
-                const requied= res.user.uid
-                const type= requied.userType
-                const db = firebase.firestore();
-
-                db.collection("users").doc(requied).get().then((querySnapshot)=> {
-                    var userData=querySnapshot.data().userType
-                    querySnapshot.forEach(function(doc) {
-                      
-                    });
+                const db= firebase.firestore();
+                db.collection("users").where("Email", "==",this.state.email)
+                .get()
+                .then((querySnapshot)=>{
+                    querySnapshot.forEach((doc)=> {
+                        // doc.data() is never undefined for query doc snapshots
+                        console.log(doc.id, " => ", doc.data());
+                        console.log(doc.data().userType);
+                        this.setState({loggedType:doc.data().userType});
                 });
+        
+                })
+                .catch(function(error) {
+                    console.log("Error getting documents: ", error);
+                })
 
-                console.log(type)
+                .then( (docRef) =>{
+                    if(this.state.loggedType=='cheif'){
+                        (this.props.history.push('/cheif'))
 
-                if (type=="cheif"){
-                   (this.props.history.push("/user"))
-                }else{
-                    (this.props.history.push("/cheif"))
-                }
+                    }else{
+                        (this.props.history.push('/user'))
+                    }
+                })
+
+              
+
+                
             }).catch( (error)=> {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-
             console.log(error)
             alert(errorCode)
             // ...
@@ -68,12 +74,18 @@ class Login extends Component{
     };
 
 
+
     render(){
         const { currentUser } = this.context
         if (currentUser) {
+
+
             console.log(currentUser)
         }
+        else{
+            return <Redirect to="/" />;
 
+        }
         
 
         return(

@@ -1,9 +1,11 @@
+
 import React  ,{Component}from 'react';
 import './UserHomePage.css';
 import Cards from '../Card/Card.js'
 import facebook from '../facebook.svg';
 import instagram from '../instagram.svg'
 import twitter from '../twitter.svg'
+import wasfa from '../wasfa.png'
 
 
   class User extends Component{
@@ -48,7 +50,7 @@ import twitter from '../twitter.svg'
 
           <img 
               className='yummyImgUser'
-              src={'https://images.squarespace-cdn.com/content/v1/58a2fdcebebafb516ada1fe8/1540290099613-3ROW0HJZE2XYX6V0X88E/ke17ZwdGBToddI8pDm48kHAe7tJsq_QjUiQiP46BuYd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW40zwkR4L7HOs8xw3xsyz7UeCy_bEEXkaPS43zxyZdvP7cJNZlDXbgJNE9ef52e8w/Logo+Yummy.png?format=750w'}
+              src={wasfa}
             />
           
           <div className='cards'>

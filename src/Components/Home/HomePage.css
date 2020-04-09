@@ -54,3 +54,37 @@
   font-size: 20px;
   color:#b71c1c;
 }
+
+.input1{
+  width:380px;
+  padding: 9px;
+  margin:10px;
+  border: none;
+  opacity: 0.9;
+  border-Radius: 2px;
+  background: white;
+  height: 30px;
+}
+
+.Search{
+  width:400px;
+  padding: 9px;
+  margin:10px;
+  border: none;
+  border-Radius: 10px;
+  background: white;
+  height: 30px;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.SearchIcon{
+  position: absolute;
+  top: 507px;
+  left: 34%;
+  transform: translate(-50%, -50%);
+
+}
+

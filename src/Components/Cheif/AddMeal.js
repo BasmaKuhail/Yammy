@@ -5,6 +5,7 @@ import * as firebase from 'firebase'
 
 class Add extends Component{
     state={
+        uid:""
     }
     componentDidMount(){
         const db = firebase.firestore();
@@ -14,8 +15,21 @@ class Add extends Component{
                 console.log(`${doc.id} => ${doc.data().first}`);
             });
         });
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              // User logged in already or has just logged in.
+              console.log(user.uid);
+              this.setState({uid:user.uid})
+            } else {
+              // User not logged in or has just logged out.
+            };
+          });
+        
     }
-    
+
+   
+
   
     handleChange = (e)=>{
 
@@ -30,7 +44,7 @@ class Add extends Component{
     AddMeal = ()=>{
         const db = firebase.firestore();
 
-        const {name , contents , recipe , time ,type, image} = this.state;
+        const {name , contents , recipe , time ,type, image, uid} = this.state;
       
 
         console.log(this.state)
@@ -40,8 +54,8 @@ class Add extends Component{
             recipe: recipe,
             timeNeed: time,
             type: type,
-            image: image,
-
+            image: image,           
+            usid :uid,
         })
         .then( (docRef) =>{
             this.props.history.push('/myMeals')
@@ -130,6 +144,7 @@ class Add extends Component{
                 <div>
                     <button className='yellowButtonAdd' onClick={this.AddMeal}>add Meal</button>
                 </div>
+
                 </div>
 
 
