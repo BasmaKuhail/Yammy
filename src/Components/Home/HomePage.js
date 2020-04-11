@@ -24,64 +24,128 @@ class Home extends Component{
     return (
       <div>
 
-          <img className='bigimgHome' 
-            src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-          />
+          <img style={{width:1353, height:668,}}
+          src={"https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}/>  
         
 
-          <div className="Top-left"> 
+        <div style={{flexDirection:"row"}}>
             <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={facebook} 
-              />
+                <img 
+                    src={facebook} 
+                    style={{position:"absolute",
+                        width:40,
+                        bordeRadius: 1000,
+                        marginRight: 50, 
+                        right:0, 
+                        top:590}}
+                />
             </a>
 
             <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={instagram} 
-              /> 
+                <img 
+                    src={instagram} 
+                    style={{position:"absolute",
+                        width:40,
+                        top:590,
+                        bordeRadius: 1000,
+                        marginRight: 50, 
+                        right:70}}
+                /> 
             </a>
 
             <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={twitter} 
-              />
-            </a>
-
-        
-              <button 
-              className="sginUpButton" 
-              onClick={()=>this.props.history.push('/SignUp')}>
-              SignUp
-              </button>
-            </div>
-
-          <div className='centeredHome'>
-            <img 
-                className='yummyImg'
-                src={'https://images.squarespace-cdn.com/content/v1/58a2fdcebebafb516ada1fe8/1540290099613-3ROW0HJZE2XYX6V0X88E/ke17ZwdGBToddI8pDm48kHAe7tJsq_QjUiQiP46BuYd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW40zwkR4L7HOs8xw3xsyz7UeCy_bEEXkaPS43zxyZdvP7cJNZlDXbgJNE9ef52e8w/Logo+Yummy.png?format=750w'}
-            />
-            
+                <img 
+                    src={twitter} 
+                    style={{position:"absolute",
+                        width:40,
+                        top:590,
+                        bordeRadius: 1000,
+                        right:190}}
+                />
+                </a>
           </div>
+        
+
+
+          <div style={{position:"absolute",right:60, top:30, flexDirection:"row"}}>
+
+          <button style={{backgroundColor: "#00000000",
+            width: 120,
+            borderRadius: 20,
+            border: "2px solid",
+            borderColor:"white",
+            fontSize: 18,
+            color:"#FBFF00",
+            fontWeight:"bold",
+            marginRight:20,
+            padding:16
+            }}>About us</button>
+          <button style={{backgroundColor: "#00000000",
+            width: 120,
+            borderRadius: 20,
+            border: "2px solid",
+            borderColor:"white",
+            fontSize: 16,
+            fontWeight:"bold",
+            color:"#FBFF00",
+            marginRight:20,
+            padding:16
+
+          }}>Home</button>
+          <button style={{
+            backgroundColor: "#00000000",
+            width: 120,
+            borderRadius: 20,
+            border: "2px solid",
+            borderColor:"white",
+            fontSize: 16,
+            fontWeight:"bold",
+            color:"#FBFF00",
+            padding:16
+          }}
+          onClick={()=>this.props.history.push("SignUp")}>
+            Sign up
+            </button>
+
+          </div>
+
+  
+          <div>
+      <h1 style={{fontSize:80,
+                color:"#F5F905", 
+                marginBottom:5,
+                position: "absolute",
+                  top: 200,
+                  left: 100,}}>
+                    Delicious!
+        </h1>
+      <p style={{fontSize:26,
+                color:"#F8FB3E",
+                position: "absolute",
+                  top: 330,
+                  left: 110,}}>
+                    Enjoy cooking, Enjoy the taste
+        </p>
+        <button style={{
+        backgroundColor: "#00000000",
+        width: 150,
+        borderRadius: 20,
+        border: "2px solid",
+        borderColor:"white",
+        fontSize: 18,
+        fontWeight:"bold",
+        color:"#FBFF00",
+        padding:16,
+        position: "absolute",
+        top: 420,
+        left: 200,
+      }}
+      onClick={()=>this.props.history.push("Cards")}>
+        Explore now
+        </button>
+
+      </div>
           
-          <div classNmae="search">
-            <LocalDiningIcon fontSize="large" />
-            <input 
-                        className="input1" 
-                        type="text " 
-                        name= "search" 
-                        placeholder ="  search a meal" 
-                        defaultValue={this.state.search} 
-                        onChange={this.handleChange}
-            />
-          </div>
-
-          <div className='cards'>
-              <Cards {...this.props}/>
-          </div>
           
             
              

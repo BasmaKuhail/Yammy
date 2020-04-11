@@ -8,6 +8,7 @@ import Meal from './Components/Cheif/meal.js';
 import MyMeals from './Components/Cheif/MyMeals';
 import User from './Components/User/UserHomePage';
 import Favourite from './Components/User/favourite';
+import Cards from './Components/Card/Card'
 import {BrowserRouter} from 'react-router-dom';  
 import {Route, Switch} from 'react-router-dom';
 import * as firebase from 'firebase';
@@ -38,6 +39,7 @@ class App extends Component{
           <BrowserRouter>
             <Switch>
               <Route  path="/" component={Home} exact/>
+              <Route path='/Cards' component={Cards}/>
               <PrivateRoute path='/add' component={Add}/>
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
