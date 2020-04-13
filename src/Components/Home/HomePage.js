@@ -1,12 +1,8 @@
 import React  ,{Component}from 'react';
 import './HomePage.css';
-import Cards from './CardHome.js';
 import facebook from '../facebook.svg';
 import instagram from '../instagram.svg';
 import twitter from '../twitter.svg';
-import wasfa from '../wasfa.png'
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
-import RestaurantIcon from '@material-ui/icons/Restaurant';
 
 
 class Home extends Component{
@@ -24,71 +20,61 @@ class Home extends Component{
 
     return (
       <div>
-
-          <img className='bigimgHome' 
-            src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-          />
-        
-
-          <div className="Top-left"> 
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={facebook} 
-              />
-            </a>
-
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={instagram} 
-              /> 
-            </a>
-
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={twitter} 
-              />
-            </a>
-
-        
-              <button 
-              className="sginUpButton" 
-              onClick={()=>this.props.history.push('/SignUp')}>
-              SignUp
-              </button>
-            </div>
-
-          <div className='centeredHome'>
+        <img style={{width:1353, height:668,}}
+          src={"https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}/>  
+      
+        <div style={{flexDirection:"row"}}>
+          <a href="https://www.facebook.com/basmakuhail2003">
             <img 
-                className='yummyImg'
-                src={wasfa}
-            />
-            
-          </div>
-          
-          <div classNmae="search">
-            <LocalDiningIcon fontSize="large" className='SearchIcon' />
-            <input 
-                        className="Search" 
-                        type="text " 
-                        name= "search" 
-                        placeholder ="  search a meal" 
-                        defaultValue={this.state.search} 
-                        onChange={this.handleChange}
-            />
-          </div>
+              src={facebook}
+              className='facebookHome' 
+              
+                  />
+          </a>
 
-          <div className='cards'>
-              <Cards {...this.props}/>
-          </div>
+          <a href="https://www.facebook.com/basmakuhail2003">
+            <img 
+              src={instagram}
+              className='instegramHome' 
+            /> 
+          </a>
+
+          <a href="https://www.facebook.com/basmakuhail2003">
+            <img 
+              src={twitter} 
+              className='tiwitterHome'
+            />
+          </a>
+        </div>
+      
+        <div className='buttonsHome'>
+        
+          <button className='aboutUs'>About us</button>
+          <button className='home'>Home</button>
+          <button className='signUpHome' onClick={()=>this.props.history.push("SignUp")}>
+            Sign up
+          </button>
+
+        </div>
+
+    
+        <div>
+          <h1 className='heder'> Delicious!</h1>
+          <p className='enjoy'> Enjoy cooking, Enjoy the taste</p>
+          <button 
+            className='explore'
+            onClick={()=>this.props.history.push("Card")}>
+              Explore now
+          </button>
+
+        </div>
+          
           
             
              
       </div>
           
-      );
+    );
     }
 }
 

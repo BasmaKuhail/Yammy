@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as firebase from 'firebase';
 import './signUpLogIn.css';
+import image from '../signUp.png'
 
 class SignUp extends Component{
 
@@ -70,19 +71,27 @@ class SignUp extends Component{
     render(){
         return(
             <div  className="base-container">
-                <img className='bigimg' 
-                    src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-                />
+                <img className='imagesi'
+                    src={image}
 
+                />
+              
                 <div className="signup">
-                            
-                    <h1 className="header">Sign Up</h1>
+                    <h1 className='heder1'> wasfa</h1>
+                    <p className='enjoy1'> Enjoy cooking, Enjoy sharing!</p>
+                        
+            </div>
+            <div className='signup1'>
+            <h1 className="header">Sign Up</h1>
                     <p className='text1'>Please fill this form to create an account</p>
 
                     <div className="form-group">
                         
                     
                         <input 
+                            style={{
+                                width:335
+                            }}
                             className="input1" 
                             type="text" 
                             name="email" 
@@ -94,6 +103,9 @@ class SignUp extends Component{
                     
                     <div className="form-group">
                         <input 
+                        style={{
+                            width:335
+                        }}
                         className="input1" 
                         type="text" 
                         name= "username" 
@@ -146,11 +158,7 @@ class SignUp extends Component{
                             <button className="yellowButton" onClick={this.gotoLoginPage}>Login</button>
                         </div>
                         </div>
-
-
-                   
-
-            </div>
+                        </div>
 
         </div>
 

@@ -1,4 +1,3 @@
-
 import React  ,{Component}from 'react';
 import './UserHomePage.css';
 import Cards from '../Card/Card.js'
@@ -6,61 +5,68 @@ import facebook from '../facebook.svg';
 import instagram from '../instagram.svg'
 import twitter from '../twitter.svg'
 import wasfa from '../wasfa.png'
+import back from '../gray.png';
+import user from '../user.svg';
+import saved from '../saved1.svg'
+import search from '../search.svg'
 
 
-  class User extends Component{
-    render(){
+class User extends Component{
+  render(){
 
-      return (
-        <div>
+    return (
+      <div className='contaner'>
+        <img 
+          src={back} 
+          style={{width:'100%', height:60 }}
+        />
+        
 
-          <img className='bigimg' 
-            src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-          />
+        <img 
+          className="saved" 
+          src={saved}
+          onClick={()=>this.props.history.push('/favourite')}
+        />
           
-
-          <div className="Top-left"> 
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={facebook} 
-              />
-            </a>
-
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={instagram} 
-              /> 
-            </a>
-
-            <a href="https://www.facebook.com/basmakuhail2003">
-              <img 
-                className='imageLeft' 
-                src={twitter} 
-              />
-            </a>
-          </div>
-    
-          <button 
-            className="favourite" 
-            onClick={()=>this.props.history.push('/favourite')}>
-              My Favourites
+        <div style={{flexDirection:"row"}}>
+          <button className='searchButton'>
+            <img style={{width:20,height:20}} src={search}/>
           </button>
-
+          <input className='search' type="text" name="search" placeholder="Search.."/>
+        
           <img 
-              className='yummyImgUser'
-              src={wasfa}
-            />
-          
-          <div className='cards'>
-            <Cards {...this.props}/>
-          </div>
+            src={user}
+            className='user'
+          />
+
+          <a href="https://www.facebook.com/basmakuhail2003">
+            <img 
+              src={facebook}
+              className='facebookUser'/> 
+          </a>
+
+          <a href="https://www.facebook.com/basmakuhail2003">
+            <img 
+              src={instagram}
+              className='instagramUser'/>
+          </a>
+
+          <a href="https://www.facebook.com/basmakuhail2003">
+            <img 
+              src={twitter}
+              className='twitterHome'/>               
+          </a>       
+
         </div>
+          
+        <div className='cards'>
+          <Cards {...this.props}/>
+        </div>
+      </div>
 
        
   );
-    }
+  }
 }
 
 export default User;

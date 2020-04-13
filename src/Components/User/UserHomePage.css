@@ -1,98 +1,86 @@
+.contaner{
+  background-color:#f0f2f5;
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none
+}
+.saved{
+  position:absolute;
+  width:30px;
+  margin-left: 10px;
+  right:60px;
+  top:15px;
+}
+.saved:hover {
+  background: #bbb;
+}
 
-    .yummyImgUser{
-      position: absolute;
-      top: 300px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-    .favourite{
-      background-color: white;
-      width: 120px;
-      border-Radius: 20px;
-      padding: 13px;
-      border: none;
-      position: absolute;
-      top: 8px;
-      right: 15px;
-      font-size: 12px;
-    }
+.searchButton{
+  position:absolute;
+  top:13px;
+  left:140px;
+  cursor: pointer;
+  width:50px;
+  height: 35px;
+  border: none;
+  border-radius: 2px;
+  background-color:#55616f;
+}
+.searchButton:hover {
+  background: #bbb;
+}
 
-    
-    .input{
-      margin:10px;
-      width: 350px;
-      height: 30px;
-      border-Radius: 15px;
-      border:'none';
-  
-    }
-    
-    .buttonAdd{
-      border-Radius: 10px;
-      padding: 9px;
-      border:'none';
-      position: absolute;
-      top: 8px;
-      right: -1140px;
-    }
-  
-    .buttonMyMeals{
-      border-Radius: 10px;
-      padding: 9px;
-      border:'none';
-      position: absolute;
-      top: 8px;
-      right: -1050px;
-  
-  
-    }
-    
-    .Top-left {
-      position: absolute;
-      top: 8px;
-      left: 16px;
-    }
-    
-    
-    .bigimg{
-      width: 1350px;
-      height: 700px;
-    }
-    
-    .centered {
-      position: absolute;
-      top: 300px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  
-    .filter{
-      margin:5px;
-      border-Radius: 10px;
-      padding: 5px;
-      border:'none';
-      transform: translate(-50%, -50%);
-  
-    }
-    
-    .overlay {
-      position: absolute; 
-      bottom: 0; 
-      background: rgba(0, 0, 0, 0.5); /* Black see-through */
-      color: #f1f1f1; 
-      width: 1311px;
-      opacity:0;
-      font-size: 20px;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .container:hover .overlay {
-      opacity: 1;
-    }
-  
-    .cards{
-      margin: 10px;
-      display:inline-block;
-    }
+input[type=text] {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 30%;
+}
+.search{
+  position:absolute;
+  top:13px;
+  left: 180px;
+  background-color:#55616f;
+  height: 33px;
+  width: 100px;
+  border-radius:2px ;
+  border: none;
+  scrollbar-darkshadow-color: #f0f2f5
+}
+
+.user{
+  position:absolute;
+  width:60px;
+  margin-left: 10px;
+  right:0px;
+  top:0px
+}
+
+.facebookUser{
+  position:absolute;
+  width:30px;
+  margin-left: 10px;
+  left:0px;
+  top:15px
+}
+.instagramUser{
+  position:absolute;
+  width:30px;
+  top:15px;
+  margin-left: 10px;
+  left:80px
+}
+.twitterHome{
+  position:absolute;
+  width:30px;
+  top:15px;
+  margin-left: 10px; 
+  left: 40px;
+}
+
+
+
+   

@@ -3,7 +3,8 @@ import { Redirect } from "react-router";
 import * as firebase from 'firebase';
 import "./signUpLogIn.css";
 import { AuthContext } from "../../Auth";
- 
+import image from '../signUp.png'
+
 
 
 class Login extends Component{
@@ -91,10 +92,16 @@ class Login extends Component{
         return(
             <div className="base-container">
 
-                <img className='bigimg' 
-                    src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
-                
+                <img className='imagesi'
+                    src={image}
+
+                />
                 <div className="signup">
+                    <h1 className='heder1'> wasfa</h1>
+                    <p className='enjoy1'> Enjoy cooking, Enjoy sharing!</p>
+                        
+            </div>
+                <div className="signup1">
                         <h1 className="header">Login</h1>
 
                         <input 

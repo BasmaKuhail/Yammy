@@ -1,19 +1,31 @@
 .card{
   float: left;
-  max-width: 32%;
-  max-height: 32%;
-  margin: 5px;
+  max-width: 30%;
+  max-height: 30%;
+  margin: 10px;
+}
+.area{
+  height: 280px;
 }
 
 .media{
-  height: 200px;
-  width: 290px;
-  padding-top: '65.25%';
-
-}
-.expandOpen{
-  transform: 'rotate(180deg)';
+  height: 220px;
+  width: 300px;
 }
 .title{
-  text-align: center;
+  text-align: left;
   }
+.actions{
+  height: 30px;
+}
+.save{
+  width:30px;
+  height: 30px;
+  position:absolute;
+  left:-10px;
+}
+.expandOpen{
+  transform: rotate(360deg);
+  position:absolute;
+  right:-260px;
+}

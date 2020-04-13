@@ -10,6 +10,9 @@ import CardHeader from '@material-ui/core/CardHeader';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardMedia from '@material-ui/core/CardMedia';
+import savedFull from '../savedFull.svg'
+import savedEmpty from '../savedEmpty.svg'
+
 
 
 class Cards extends Component{
@@ -81,54 +84,41 @@ class Cards extends Component{
 
         
         return(
-
-                
-                <div>
-                    {meals.map((meal)=>
-
+            <div>
+                {meals.map((meal)=>
                     <Card className='card'>
-                        <CardActionArea>
-                            <CardContent>
-                            <CardHeader 
-                                className='title'
-                                title= {meal.mealName}
-                            />
 
+                        <CardActionArea
+                          className='area'
+                          onClick={()=>this.learnMore(meal.id)}>
                             <CardMedia
                                 className='media'
                                 image={meal.image}
                             />
-
-                            </CardContent>
-
+                            <CardHeader 
+                                className='title'
+                                title= {meal.mealName}
+                            />
                         </CardActionArea>
 
-                        <CardActions>
-
-
-                            <Button size="small" color="primary"
-                              onClick={()=>this.learnMore(meal.id)}>
-                            Learn More
-                            </Button>
-
-                            <IconButton aria-label="add to favorites" className='expandOpen'onClick={()=>this.getMealId(meal.id)}>
-                                <FavoriteIcon />
+                        <CardActions className='actions'>
+                            <IconButton 
+                                className='expandOpen'
+                                onClick={()=>this.getMealId(meal.id)}>
+                                <img 
+                                    className='save'
+                                    src={savedEmpty}/>
                             </IconButton>
                         </CardActions>
 
                     </Card>
                     
                 )}
-                    </div>
-                
-
-
-            
+            </div>
+          
         );
-
     
     }
-
 }
 
 export default Cards;
