@@ -18,6 +18,18 @@
       font-size: 12px;
     }
 
+    .logout{
+      background-color: white;
+      width: 120px;
+      border-Radius: 20px;
+      padding: 13px;
+      border: none;
+      position: absolute;
+      top: 8px;
+      right: 150px;
+      font-size: 12px;
+    }
+
     
     .input{
       margin:10px;

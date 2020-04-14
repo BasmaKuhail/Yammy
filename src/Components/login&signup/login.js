@@ -1,7 +1,6 @@
 import React, {Component, useContext} from 'react';
 import { Redirect } from "react-router";
 import * as firebase from 'firebase';
-import "./signUpLogIn.css";
 import { AuthContext } from "../../Auth";
  
 
@@ -24,6 +23,10 @@ class Login extends Component{
         })
 
     };
+
+    gotSignUpPage=()=>{
+        this.props.history.push('/SignUp')
+    }
     
 
     signin = ()=>{
@@ -89,34 +92,84 @@ class Login extends Component{
         
 
         return(
-            <div className="base-container">
+            <div>
 
-                <img className='bigimg' 
-                    src={'https://images.pexels.com/photos/616412/pexels-photo-616412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
-                
-                <div className="signup">
-                        <h1 className="header">Login</h1>
+                <img
+                    src={'https://images.pexels.com/photos/1431305/pexels-photo-1431305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+                    style={{width:1365, height:668,opacity:0.9}}
+                />      
+                <div style={{position:"absolute",borderRadius:25,right:480,padding:20, background:" rgba(0, 0, 0, 0.6)",alignItems:"center", top:45,textAlign:"center"}}>
 
+                <h1 style={{fontSize:40,
+                                color:"#FBFF00", 
+                                }}>Login</h1>
+
+<p style={{fontSize:19, fontWeight:"bold", color:"#ffffff"}}>Please fill this form to login</p>
+
+
+                    <div>
+                        
+                    
                         <input 
-                        className="input1" 
-                        type="text" 
-                        name="email" 
-                        placeholder =" E-mail"  
-                        defaultValue={this.state.email} 
-                        onChange={this.handleChange}
+                            
+                            type="text" 
+                            name="email" 
+                            placeholder ="  E-mail"  
+                            defaultValue={this.state.email} 
+                            onChange={this.handleChange}
+                            style={{width:340,
+                                padding: 8.5,
+                                margin:10,
+                                border: "none",
+                                opacity: 0.9,
+                                borderRadius: 2,
+                                background: "white",
+                                height: 30,}}
                         />
-
+                    </div>
+                    <div>
                         <input 
-                        className="input1" 
                         type="password" 
                         name= "password" 
-                        placeholder =" Password" 
+                        placeholder ="  Password" 
                         defaultValue={this.state.password} 
                         onChange={this.handleChange}
+                        style={{width:340,
+                            padding: 8.5,
+                            marginTop:10,
+                            marginBottom:20,
+                            border: "none",
+                            opacity: 0.9,
+                            borderRadius: 2,
+                            background: "white",
+                            height: 30,}}
                         />
-                        
-                        <button onClick={this.signin} className="yellowButton">Login</button>
+                    </div>
+                    <div >
+                            <button style={{backgroundColor: "#FBFF00",
+                                            borderRadius: 10,
+                                            padding: 9,
+                                            marginTop:20,
+                                            marginBottom:10,
+                                            border: "none",
+                                            width: 200,
+                                            opacity: 0.9,
+                                            fontSize: 20,
+                                            fontWeight:"bold"}} onClick={this.signin}>Login</button>
+                        </div> 
+                        <p style={{fontSize:19,fontWeight:"bold", color:"#ffffff"}}>Don't you have an account?</p>
 
+                        <div>
+                            <button style={{backgroundColor: "#FBFF00",
+                                            borderRadius: 10,
+                                            padding: 9,
+                                            marginTop:3,
+                                            border: "none",
+                                            width: 200,
+                                            opacity: 0.9,
+                                            fontSize: 20,
+                                            fontWeight:"bold"}} onClick={this.gotSignUpPage}>Sign up</button>
+                        </div>
             </div>
             </div>
         )

@@ -7,10 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
-import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardMedia from '@material-ui/core/CardMedia';
-import Meal from '../Cheif/meal'
 
 
 
@@ -48,14 +45,16 @@ class Cards extends Component{
               console.log(user.uid);
               this.setState({uid:user.uid})
             } else {
-              // User not logged in or has just logged out.
+                             // User not logged in or has just logged out.
             };
           });
     }
 
+
     getMealId=(clickedMealId)=> {
-        this.setState({mealId: clickedMealId})
-        console.log(this.state.mealId)
+        console.log(clickedMealId);
+        this.setState({mealId:clickedMealId});
+        console.log(this.state.mealId);
 
         const db = firebase.firestore();
 
@@ -75,8 +74,15 @@ class Cards extends Component{
 
      }
 
+
+
      learnMore=(clickedMealId)=>{
+         console.log(clickedMealId);
         this.props.history.push('/meal', {id: clickedMealId})
+     }
+
+     check=()=>{
+
      }
 
     render(){

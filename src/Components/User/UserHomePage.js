@@ -2,11 +2,20 @@ import React  ,{Component}from 'react';
 import './UserHomePage.css';
 import Cards from '../Card/Card.js'
 import facebook from '../facebook.svg';
-import instagram from '../instagram.svg'
-import twitter from '../twitter.svg'
-
+import instagram from '../instagram.svg';
+import twitter from '../twitter.svg';
+import * as firebase from 'firebase';
 
   class User extends Component{
+
+    logout=()=>{
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+    }
+    
     render(){
 
       return (
@@ -44,6 +53,13 @@ import twitter from '../twitter.svg'
             className="favourite" 
             onClick={()=>this.props.history.push('/favourite')}>
               My Favourites
+          </button>
+
+          <button 
+            className="logout" 
+            onClick={this.logout}
+        >
+              Logout
           </button>
 
           <img 

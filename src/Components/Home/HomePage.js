@@ -101,10 +101,27 @@ class Home extends Component{
             fontSize: 16,
             fontWeight:"bold",
             color:"#FBFF00",
-            padding:16
+            padding:16,
+            marginRight:20,
+
           }}
           onClick={()=>this.props.history.push("SignUp")}>
             Sign up
+            </button>
+
+            <button style={{
+            backgroundColor: "#00000000",
+            width: 120,
+            borderRadius: 20,
+            border: "2px solid",
+            borderColor:"white",
+            fontSize: 16,
+            fontWeight:"bold",
+            color:"#FBFF00",
+            padding:16
+          }}
+          onClick={()=>this.props.history.push("Login")}>
+            Login
             </button>
 
           </div>
@@ -117,14 +134,16 @@ class Home extends Component{
                 position: "absolute",
                   top: 200,
                   left: 100,}}>
-                    Delicious!
+                    Wasfa!
         </h1>
-      <p style={{fontSize:26,
+      <p style={{fontSize:35,
                 color:"#F8FB3E",
                 position: "absolute",
                   top: 330,
                   left: 110,}}>
-                    Enjoy cooking, Enjoy the taste
+                    Enjoy cooking,
+                    <br/>
+                   Enjoy the taste
         </p>
         <button style={{
         backgroundColor: "#00000000",
@@ -137,10 +156,10 @@ class Home extends Component{
         color:"#FBFF00",
         padding:16,
         position: "absolute",
-        top: 420,
-        left: 200,
+        top: 480,
+        left: 150,
       }}
-      onClick={()=>this.props.history.push("Cards")}>
+      onClick={()=>this.props.history.push("Public")}>
         Explore now
         </button>
 

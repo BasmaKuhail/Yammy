@@ -34,6 +34,8 @@ class Favourite extends Component{
               this.setState({uid:user.uid});
               console.log(this.state.uid);
             } else {
+                console.log("not logged in ");
+
               // User not logged in or has just logged out.
             };
 
@@ -58,25 +60,14 @@ class Favourite extends Component{
             .then((doc)=>{
                     console.log(doc.data());
                     favMeals.push(doc.data());
-                    me.setState(favMeals)
+                    me.setState(favMeals);
+                    console.log(favMeals)
 
                 });
             })
         });
 
         console.log(currentUserMealId); //it's an arrray of the fav meals' id that the current user has 
-
-        // currentUserMealId.forEach(id => {
-        //     console.log(id);
-        //     db.collection('meals').doc(id)
-        //     .get()
-        //     .then((doc)=>{
-        //             console.log(doc.data());
-        //             favMeals.push(doc.data());
-        //             me.setState(favMeals)
-
-        //         });
-        //     });
         });      
     }
 
