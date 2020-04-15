@@ -81,35 +81,42 @@ class Cards extends Component{
 
         const {meals}= this.state;
         console.log(this.state.meals)
-
-        
+    
         return(
             <div>
+                
                 {meals.map((meal)=>
                     <Card className='card'>
 
                         <CardActionArea
                           className='area'
-                          onClick={()=>this.learnMore(meal.id)}>
+                         >
                             <CardMedia
                                 className='media'
                                 image={meal.image}
-                            />
+                                onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
                                 className='title'
                                 title= {meal.mealName}
-                            />
-                        </CardActionArea>
-
-                        <CardActions className='actions'>
+                                onClick={()=>this.learnMore(meal.id)}/>
+                            <CardHeader 
+                                className='chefName'
+                                title= 'name'
+                              />
+                             <CardActions className='actions'>
                             <IconButton 
                                 className='expandOpen'
                                 onClick={()=>this.getMealId(meal.id)}>
                                 <img 
+                                    onClick={()=>this.src={savedFull}}
                                     className='save'
                                     src={savedEmpty}/>
+                                    
                             </IconButton>
                         </CardActions>
+                        </CardActionArea>
+
+                       
 
                     </Card>
                     

@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import Cards from '../Home/CardHome';
 import * as firebase from 'firebase';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
+import back from '../gray.png';
+import back1 from '../back.svg'
 
 
 class Favourite extends Component{
@@ -64,19 +62,7 @@ class Favourite extends Component{
             })
         });
 
-        console.log(currentUserMealId); //it's an arrray of the fav meals' id that the current user has 
-
-        // currentUserMealId.forEach(id => {
-        //     console.log(id);
-        //     db.collection('meals').doc(id)
-        //     .get()
-        //     .then((doc)=>{
-        //             console.log(doc.data());
-        //             favMeals.push(doc.data());
-        //             me.setState(favMeals)
-
-        //         });
-        //     });
+        console.log(currentUserMealId);
         });      
     }
 
@@ -99,7 +85,9 @@ class Favourite extends Component{
                     });
                 });
         }
-    
+        learnMore=(clickedMealId)=>{
+            this.props.history.push('/meal', {id: clickedMealId})
+         }
     render(){
         const {favMeals}= this.state;
         console.log(this.state.favMeals); 
@@ -107,44 +95,48 @@ class Favourite extends Component{
 
         return(
 
-            // <div>
-            // <button onClick={this.list}></button>
-            // </div>
+            <div className='contaner'>
+                <img 
+                    src={back} 
+                    style={{width:1366, height:60 }}
+                />
+                
+                <div style={{padding:14}}>
+                   
+                    <img 
+                        className='backimg' 
+                        style={{
+                            width:30, 
+                            position:'absolute' ,
+                            marginLeft: 10,
+                            left:0,
+                            top:10}} 
+                            src={back1} onClick={()=>this.props.history.push("/user")}/>
+                   
+            
+                    {favMeals.map((meal)=>
 
-            <div className='TheCard'>
-                {favMeals.map((meal)=>
+                        <Card className='card'>
 
-                    <Card className='cardHome'>
-                        <CardActionArea className='CardActionArea' >
-                            <CardContent className='cardContent' >
-
+                        <CardActionArea
+                        className='area'
+                        >
+                            <CardMedia
+                                className='media'
+                                image={meal.image}
+                                onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
                                 className='title'
                                 title= {meal.mealName}
-                            />
-
-                            <CardMedia
-                                className='mediaHome'
-                                image={meal.image}
-                            />
-
-                            </CardContent>
-
+                                onClick={()=>this.learnMore(meal.id)}/>
+                        
                         </CardActionArea>
 
-                        <CardActions className=' CardActions'>
 
 
-                            <Button size="small" color="primary" 
-                             onClick={()=>this.props.history.push('/meal')}>
-                                Learn More
-                            </Button>
-                        </CardActions>
-
-
-                    </Card>
-                    
-                )}
+                        </Card>
+                    )}
+                </div>
             </div>
                 
 

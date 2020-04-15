@@ -4,18 +4,25 @@
 }
 
   .buttonAdd{
-    background-color: white;
-    width: 80px;
-    border-Radius: 20px;
-    padding: 13px;
+    background-color: #5dd1f8;
+    width: 60px;
+    height: 60px;
+    border-Radius: 1000px;
+   
     border: none;
     position: absolute;
-    top: 8px;
-    right: 15px;
-    font-size: 12px;
-    left: 1240px;
+    top: 560px;
+    left: 1250px;
   }
-
+  .savedChef:hover {
+    background: #bbb;
+    border-radius: 100px;
+  
+  }
+.more{
+  width: 40px;
+  height: 40px;
+}
   .buttonMyMeals{
     background-color: white;
     width: 80px;
@@ -24,17 +31,35 @@
     border: none;
     position: absolute;
     top: 8px;
-    right: 15px;
     font-size: 12px;
-    left: 1150px;
+    right: 135px;
   }
-  
+  .buttonMyMeals:hover {
+    background: #bbb;
+  }
   .Top-left {
     position: absolute;
     top: 8px;
     left: 16px;
   }
-  
+  .logout{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 65px;
+    top:15px;
+  }
+  .savedChef{
+    position:absolute;
+  width:30px;
+  right:100px;
+  top:15px;
+  }
+  .logout:hover {
+    background: #bbb;
+    border-radius: 30px;
+
+  }
   .centered {
     position: absolute;
     top: 300px;

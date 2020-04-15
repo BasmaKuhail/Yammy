@@ -8,7 +8,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-
+import back from '../gray.png';
+import back1 from '../back.svg'
+import more from '../more.svg'
 
 
 class MyMeals extends Component{
@@ -60,40 +62,52 @@ class MyMeals extends Component{
         console.log(this.state.meals)
 
         return(
-            <div className='TheCard'>
+            <div className='contaner'>
+                <img 
+                    src={back} 
+                    style={{width:1366, height:60 }}
+                />
+                <div style={{padding:14}}>
+                   
+                   <img 
+                       className='backimg' 
+                       style={{
+                           width:30, 
+                           position:'absolute' ,
+                           marginLeft: 10,
+                           left:0,
+                           top:10}} 
+                           src={back1} onClick={()=>this.props.history.push("/cheif")}/>
+
                 {meals.map((meal)=>
 
-                    <Card className='cardHome'>
-                        <CardActionArea className='CardActionArea' >
-                            <CardContent className='cardContent' >
+                    <Card className='card'>
 
+                        <CardActionArea
+                        className='area'
+                        >
+                            <CardMedia
+                                className='media'
+                                image={meal.image}
+                                onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
                                 className='title'
                                 title= {meal.mealName}
-                            />
-
-                            <CardMedia
-                                className='mediaHome'
-                                image={meal.image}
-                            />
-
-                            </CardContent>
-
+                                onClick={()=>this.learnMore(meal.id)}/>
+                        
                         </CardActionArea>
 
-                        <CardActions className=' CardActions'>
 
 
-                            <Button size="small" color="primary" 
-                             onClick={()=>this.props.history.push('/meal')}>
-                                Learn More
-                            </Button>
-                        </CardActions>
-
-
-                    </Card>
+                        </Card>
                     
                 )}
+                 <button 
+              className="buttonAdd" 
+              onClick={()=>this.props.history.push('/add')}>
+                <img  className='more' src={more}/>
+            </button>
+            </div>
             </div>
                 
 

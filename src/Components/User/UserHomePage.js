@@ -4,12 +4,18 @@ import Cards from '../Card/Card.js'
 import facebook from '../facebook.svg';
 import instagram from '../instagram.svg'
 import twitter from '../twitter.svg'
-import wasfa from '../wasfa.png'
 import back from '../gray.png';
 import user from '../user.svg';
 import saved from '../saved1.svg'
 import search from '../search.svg'
-
+import salad from '../salad.svg';
+import desert from '../sweet.svg'
+import drinks from '../drinks.svg'
+import vagen from '../vagen.svg'
+import breakfast from '../breakfast.svg.svg'
+import lunch from '../lunch.svg'
+import diner from '../breakfast.svg'
+import logout from '../logout .svg'
 
 class User extends Component{
   render(){
@@ -18,7 +24,7 @@ class User extends Component{
       <div className='contaner'>
         <img 
           src={back} 
-          style={{width:'100%', height:60 }}
+          style={{width:1366, height:60 }}
         />
         
 
@@ -38,6 +44,13 @@ class User extends Component{
             src={user}
             className='user'
           />
+          <img
+          className='logout'
+          src={logout}
+          // onClick={this.logout}
+
+          onClick={()=>this.props.history.push('/')}
+          />
 
           <a href="https://www.facebook.com/basmakuhail2003">
             <img 
@@ -55,7 +68,18 @@ class User extends Component{
             <img 
               src={twitter}
               className='twitterHome'/>               
-          </a>       
+          </a>
+          <div className='filterUser'>
+            <button className='FilterBreak'> <img className='imgFilter' src={breakfast}/></button>
+            <button className='FilterLunch'> <img className='imgFilter' src={lunch}/></button>
+            <button className='FilterDiner'><img className='imgFilter' src={diner}/></button>
+            <button className='buttonFilter'><img className='imgFilter' src={vagen}/></button>       
+            <button className='buttonFilter' ><img className='imgFilter' src={drinks}/></button>       
+            <button className='buttonFilter'><img className='imgFilter' src={desert}/></button>       
+            <button className='buttonFilter'> <img className='imgFilter' src={salad}/></button>
+          </div>
+       
+       
 
         </div>
           

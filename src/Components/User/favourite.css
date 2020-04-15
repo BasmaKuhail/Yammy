@@ -1,0 +1,67 @@
+.contaner{
+    background-color:#f0f2f5;
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none
+  }
+  .SignUpButton{
+    position:absolute;
+    top:8px;
+    margin-right: 10px; 
+    right: 15px;
+    background-color: #fd6700;
+    width: 100px;
+    border-radius: 20px;
+    border: 2px solid;
+    font-size: 16px;
+    font-weight:bold;
+    color:#434a54;
+    padding:10px
+  }
+  .facebookCard{
+    position:absolute;
+    width:30px;
+    margin-left: 10px;
+    left:0px;
+    top:15px
+  }
+  .instagramCard{
+    position:absolute;
+    width:30px;
+    top:15px;
+    margin-left: 10px;
+    left:80px
+  }
+  .twitterCard{
+    position:absolute;
+    width:30px;
+    top:15px;
+    margin-left: 10px; 
+    left: 40px;
+  }
+  .card{
+    float: left;
+    max-width: 30%;
+    max-height: 30%;
+    margin: 10px;
+  }
+  
+  .media{
+    height: 220px;
+    width: 300px;
+  }
+  .expandOpen{
+    transform: 'rotate(180deg)';
+  }
+  .title{
+    text-align: left;
+    }
+
+.backimg{
+    position:absolute ;
+    margin-left: 10px;
+    left:0px;
+    top:-15px
+
+}
