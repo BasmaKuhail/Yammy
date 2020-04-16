@@ -29,8 +29,7 @@ class Add extends Component{
     }
 
    
-
-  
+ 
     handleChange = (e)=>{
 
         let key = e.target.name;

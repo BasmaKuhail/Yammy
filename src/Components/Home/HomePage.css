@@ -30,9 +30,9 @@
   width: 120px;
   border-radius: 20px;
   border: 2px solid;
-  border-color:white;
+  border-color:#fd6700;
   font-size: 18px;
-  color:#FBFF00;
+  color:white;
   font-weight:bold;
   margin-right:20px;
   padding:16px;
@@ -42,9 +42,9 @@
   width: 120px;
   border-radius: 20px;
   border: 2px solid;
-  border-color:white;
+  border-color:#fd6700;
   font-size: 18px;
-  color:#FBFF00;
+  color:white;
   font-weight:bold;
   margin-right:20px;
   padding:16px;
@@ -55,16 +55,16 @@
   width: 120px;
   border-radius: 20px;
   border: 2px solid;
-  border-color:white;
+  border-color:#fd6700;
   font-size: 16px;
-  color:#FBFF00;
+  color:white;
   font-weight:bold;
   margin-right:20px;
   padding:16px;
 }
 .heder{
   font-size:80px;
-  color:#F5F905;
+  color:white;
   margin-bottom:5px;
   position: absolute;
   top: 200px;
@@ -72,7 +72,7 @@
 }
 .enjoy{
   font-size:26px;
-  color:#F8FB3E;
+  color:white;
   position: absolute;
   top: 330px;
   left: 110px;
@@ -82,14 +82,14 @@
   width: 150px;
   border-radius: 20px;
   border: 2px solid;
-  border-color:white;
+  border-color:#fd6700;
   font-size: 18px;
   font-weight:bold;
-  color:#FBFF00;
+  color:white;
   padding:16px;
   position: absolute;
   top: 420px;
-  left: 200px;
+  left: 120px;
 }
 .centeredHome {
   position: absolute;

@@ -99,17 +99,14 @@ class Cards extends Component{
                                 className='title'
                                 title= {meal.mealName}
                                 onClick={()=>this.learnMore(meal.id)}/>
-                            <CardHeader 
-                                className='chefName'
-                                title= 'name'
-                              />
+                            
                              <CardActions className='actions'>
                             <IconButton 
                                 className='expandOpen'
                                 onClick={()=>this.getMealId(meal.id)}>
                                 <img 
                                     onClick={()=>this.src={savedFull}}
-                                    className='save'
+                                    className='saveCard'
                                     src={savedEmpty}/>
                                     
                             </IconButton>

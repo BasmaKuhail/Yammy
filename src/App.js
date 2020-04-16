@@ -14,6 +14,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
 import * as firebase from 'firebase';
 import { AuthProvider } from "./Auth";
+import favouriteChef from './Components/Cheif/favouriteChef'
 import PrivateRoute from "./PrivateRoute";
 
 class App extends Component{
@@ -42,14 +43,16 @@ class App extends Component{
               <Route  path="/" component={Home} exact/>
               <Route path='/Cards' component={Cards}/>
               <Route path='/Card' component={Card}/>
-              <PrivateRoute path='/add' component={Add}/>
+              <Route path='/add' component={Add}/>
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
-              <PrivateRoute path="/cheif" component={Cheif}/>
+              <Route path="/cheif" component={Cheif}/>
               <Route path="/meal" component={Meal}/>
-              <PrivateRoute path='/myMeals' component={MyMeals}/>
-              <PrivateRoute path='/user' component={User}/>
-              <PrivateRoute path='/favourite' component={Favourite}/>
+              <Route path='/myMeals' component={MyMeals}/>
+              <Route path='/user' component={User}/>
+              <Route path='/favourite' component={Favourite}/>
+              <Route path='/favouriteChef' component={favouriteChef}/>
+
             </Switch>
           
           </BrowserRouter>

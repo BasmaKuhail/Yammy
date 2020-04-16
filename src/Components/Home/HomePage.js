@@ -59,7 +59,7 @@ class Home extends Component{
 
     
         <div>
-          <h1 className='heder'> Delicious!</h1>
+          <h1 className='heder'> Wasfa!</h1>
           <p className='enjoy'> Enjoy cooking, Enjoy the taste</p>
           <button 
             className='explore'

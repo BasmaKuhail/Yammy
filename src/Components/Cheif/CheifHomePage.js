@@ -35,7 +35,7 @@ import * as firebase from 'firebase';
           <img 
           className="savedChef" 
           src={saved}
-          onClick={()=>this.props.history.push('/favourite')}
+          onClick={()=>this.props.history.push('/favouriteChef')}
         />
           <div style={{flexDirection:"row"}}>
           <button className='searchButton'>
