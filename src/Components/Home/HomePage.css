@@ -1,3 +1,96 @@
+.facebookHome{
+  position:absolute;
+  width:40px;
+  margin-left: 50px;
+  right:60px; 
+  top:590px;
+}
+.instegramHome{
+  position:absolute;
+  width:40px;
+  top:590px;
+  margin-left: 0px; 
+  right:120px;
+}
+.tiwitterHome{
+  position:absolute;
+  width:40px;
+  top:590px;
+  margin-left: 50px; 
+  right:180px;
+}
+.buttonsHome{
+  position:absolute;
+  right:60px; 
+  top:30px;
+  flex-direction:row;
+}
+.aboutUs{
+  background-color: #00000000;
+  width: 120px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color:#fd6700;
+  font-size: 18px;
+  color:#fff;
+  font-weight:bold;
+  margin-right:20px;
+  padding:16px;
+}
+.home{
+  background-color: #00000000;
+  width: 120px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color:#fd6700;
+  font-size: 18px;
+  color:#fff;
+  font-weight:bold;
+  margin-right:20px;
+  padding:16px;
+        
+}
+.signUpHome{
+  background-color: #00000000;
+  width: 160px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color:#fd6700;
+  font-size: 18px;
+  color:#fff;
+  font-weight:bold;
+  margin-right:20px;
+  padding:16px;
+}
+.heder{
+  font-size:80px;
+  color:#ffffff;
+  margin-bottom:5px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+.enjoy{
+  font-size:30px;
+  color:#fff;
+  position: absolute;
+  top: 320px;
+  left: 115px;
+}
+.explore{
+  background-color: #00000000;
+  width: 150px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color:#fd6700;
+  font-size: 18px;
+  font-weight:bold;
+  color:#fff;
+  padding:16px;
+  position: absolute;
+  top: 420px;
+  left: 115px;
+}
 .centeredHome {
   position: absolute;
   top: 300px;
@@ -5,67 +98,3 @@
   transform: translate(-50%, -50%);
 }
 
-.bigimgHome{
-  width: 1350px;
-  height: 700px;
-}
-.imageLeft{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 5px;
-  }
-
-.Top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-  }
-.sginUpButton{
-    background-color: white;
-    width: 80px;
-    border-Radius: 20px;
-    padding: 13px;
-    border: none;
-    position: absolute;
-    top: 8px;
-    right: -1200px;
-    font-size: 14px;
-  }
-  
-.filter{
-    margin:5px;
-    border-Radius: 10px;
-    padding: 5px;
-    border:'none';
-    transform: translate(-50%, -50%);
-  }
-
-.cards{
-    width:100%;
-
-}
-.centeredHomeP{
-  position: absolute;
-  top: 500px;
-  left: 0%;
-  transform: translate(0%, 0%);
-
-  font-size: 20px;
-  color:#b71c1c;
-}
-
-.input1{
-  width:380px;
-  padding: 9px;
-  margin:10px;
-  border: none;
-  opacity: 0.9;
-  border-Radius: 2px;
-  background: white;
-  height: 30px;
-}
-
-.search{
-  padding: 9px;
-  margin:10px;}

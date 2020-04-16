@@ -1,62 +1,97 @@
 .base-container{
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align:"center";
+  align-items: right;
+  text-align:"right";
   position: relative;
+  background-color: #f0f2f5;
 
 }
 
-.bigimg{
-    width:100%;
-    height:100% ;
-  }
-
   .signup { 
-    margin-top: 5em;
+    margin-top: 0em;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 794px;
+    padding-right: 10px;
+    left:1px;
+    height: 668px;
   
+  }
+  .signup1{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: #434a54;
+    padding-left: 785px;
+    padding-right: 10px;
+    left:130px;
+  }
+  .heder1{
+    font-size:80px;
+    color:white;
+    margin-bottom:5px;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+  }
+  .enjoy1{
+    font-size:26px;
+    color:#f0f2f5;
+    position: absolute;
+    top: 330px;
+    left: 150px;
+
+  }
+  .imagesi{
+    width:59%; 
+    height:59%;
+
   }
 
   .header {
     font-size:40px;
     font-family: "Open Sans", sans-serif;
     text-align: center;
-    color:#ffa801;
+    color:#fd6700;
     margin: 10px;
+    left:100px;
+    top:1000px;
+    
   }
 
+
   .yellowButton{
-    background-color: #ffa801;
+    background-color: #fd6700;
     border-Radius: 2px;
     padding: 9px;
     margin:10px;
-    padding: 16px 20px;
-    border: none;
-    width: 400px;
+    padding: 15px 20px;
+    width: 350px;
     opacity: 0.9;
     font-size: 14px;
+    border-radius: 10px;
+    border: none;
 
   }
 .input1{
-  width:380px;
+  width:335px;
   padding: 9px;
   margin:10px;
-  border: none;
   opacity: 0.9;
   border-Radius: 2px;
   background: white;
   height: 30px;
+  border: 0px solid;
+  border-color: #fd6700;
+  border-radius: 10px;
 }
 .please{
-  font-size: 20px;
+  font-size: 14px;
 }
 .text1{
   font-size: 20px;

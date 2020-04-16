@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as firebase from 'firebase';
 import './signUpLogIn.css';
+import image from '../signUp.png'
 
 class SignUp extends Component{
 
@@ -63,90 +64,71 @@ class SignUp extends Component{
     }
 
     gotoLoginPage=()=>{
-        this.props.history.push('/Login');
-        console.log("hello")
+        this.props.history.push('/Login')
     }
 
 
     render(){
         return(
             <div  className="base-container">
-                <img
-                    src={'https://images.pexels.com/photos/1431305/pexels-photo-1431305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
-                    style={{width:1365, height:668,opacity:0.9}}
+                <img className='imagesi'
+                    src={image}
+
                 />
-
-<div style={{position:"absolute",borderRadius:25,right:480, background:" rgba(0, 0, 0, 0.6)",alignItems:"center",padding:20, top:45,textAlign:"center"}}>
-                            
-<h1 style={{fontSize:40,
-                                color:"#FBFF00", 
-                                }}>Sign Up</h1>
-
-                    <p style={{fontSize:19, fontWeight:"bold", color:"#ffffff"}}>Please fill this form to create an account</p>
-
+              
+                <div className="signup">
+                    <h1 className='heder1'> WASFA</h1>
+                    <p className='enjoy1'> Enjoy cooking, Enjoy the taste!</p>
+                        
+            </div>
+            <div className='signup1'>
+            <h1 className="header">Sign Up</h1>
+                    <p className='text1'>Please fill this form to create an account</p>
 
                     <div className="form-group">
                         
-                    <input 
+                    
+                        <input 
+                            style={{
+                                width:335
+                            }}
                             className="input1" 
                             type="text" 
                             name="email" 
                             placeholder ="  E-mail"  
                             defaultValue={this.state.email} 
                             onChange={this.handleChange}
-                            style={{width:340,
-                                padding: 8.5,
-                                margin:10,
-                                border: "none",
-                                opacity: 0.9,
-                                borderRadius: 2,
-                                background: "white",
-                                height: 30,}}
                         />
                     </div>           
                     
                     <div className="form-group">
-                    <input 
+                        <input 
+                        style={{
+                            width:335
+                        }}
                         className="input1" 
                         type="text" 
                         name= "username" 
                         placeholder ="  Username" 
                         defaultValue={this.state.username} 
                         onChange={this.handleChange}
-                        style={{width:340,
-                            padding: 8.5,
-                            margin:10,
-                            border: "none",
-                            opacity: 0.9,
-                            borderRadius: 2,
-                            background: "white",
-                            height: 30,}}
                         />
                     </div>
 
                     <div className="form-group">
-                    <input 
+                        <input 
                         className="input1" 
                         type="password" 
                         name= "password" 
                         placeholder ="  Password" 
                         defaultValue={this.state.password} 
                         onChange={this.handleChange}
-                        style={{width:340,
-                            padding: 8.5,
-                            marginTop:10,
-                            marginBottom:20,
-                            border: "none",
-                            opacity: 0.9,
-                            borderRadius: 2,
-                            background: "white",
-                            height: 30,}}
                         />
                     </div>
 
                     <div className="form-group">
-                    <text style={{fontSize:19,marginRight:30,fontWeight:"bold", color:"#ffffff"}}>Sign up as:</text>
-                        <text style={{fontSize:20, marginRight:30,color:"#F0C308"}}>
+                        <text className='text1'>SignUp as:</text>
+                        <text className='text4'>
                             <input 
                                 type="radio" 
                                 name="type" 
@@ -157,7 +139,7 @@ class SignUp extends Component{
                             user
                         </text>  
 
-                        <text style={{fontSize:20,color:"#FBFF00"}}>
+                        <text className='text7'>
                             <input 
                                 type="radio" 
                                 name="type" 
@@ -168,35 +150,15 @@ class SignUp extends Component{
                             chief
                         </text> 
                         <div className="form-group">
-                        <button style={{backgroundColor: "#FBFF00",
-                                            borderRadius: 10,
-                                            padding: 9,
-                                            marginTop:20,
-                                            marginBottom:10,
-                                            border: "none",
-                                            width: 200,
-                                            opacity: 0.9,
-                                            fontSize: 20,
-                                            fontWeight:"bold"}} onClick={this.addUser}>Sign up</button>
-                            </div> 
-                       <p style={{fontSize:19,fontWeight:"bold", color:"#ffffff"}}>Do you already have account?</p>
+                            <button className="yellowButton" onClick={this.addUser}>Sign up</button>
+                        </div> 
+                        <p className='text1'>Do you already have account?</p>
 
                         <div className="form-group">
-                        <button style={{backgroundColor: "#FBFF00",
-                                            borderRadius: 10,
-                                            padding: 9,
-                                            marginTop:3,
-                                            border: "none",
-                                            width: 200,
-                                            opacity: 0.9,
-                                            fontSize: 20,
-                                            fontWeight:"bold"}} onClick={this.gotoLoginPage}>Login</button>                        </div>
+                            <button className="yellowButton" onClick={this.gotoLoginPage}>Login</button>
                         </div>
-
-
-                   
-
-            </div>
+                        </div>
+                        </div>
 
         </div>
 
