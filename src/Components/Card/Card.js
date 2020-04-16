@@ -9,8 +9,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import savedFull from '../savedFull.svg'
-import savedEmpty from '../savedEmpty.svg'
+import savedFull from '../savedFull.svg';
+import savedEmpty from '../savedEmpty.svg';
+import desert from '../sweet.svg';
+
 
 
 
@@ -86,36 +88,44 @@ class Cards extends Component{
 
         const {meals}= this.state;
         console.log(this.state.meals)
-
-        
+    
         return(
             <div>
+                
                 {meals.map((meal)=>
                     <Card className='card'>
 
                         <CardActionArea
                           className='area'
-                          onClick={()=>this.learnMore(meal.id)}>
+                         >
                             <CardMedia
                                 className='media'
                                 image={meal.image}
-                            />
+                                onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
                                 className='title'
                                 title= {meal.mealName}
-                            />
-                        </CardActionArea>
-
-                        <CardActions className='actions'>
-                            <IconButton 
+                                onClick={()=>this.learnMore(meal.id)}/>
+                            <CardHeader 
+                                className='chefName'
+                                title= 'name'
+                              />
+                             <CardActions>
+                             <IconButton 
+                             aria-label="add to favorites"
                                 className='expandOpen'
                                 onClick={()=>this.getMealId(meal.id)}>
                                 <img 
                                     className='save'
-                                    src={savedEmpty}/>
+                                     src={savedEmpty}
+                                    onClick={()=>this.src={savedFull}}
+                                    alt=""
+                                   />
+                                    
                             </IconButton>
-                        </CardActions>
-
+                            </CardActions>
+                        </CardActionArea>
+                        
                     </Card>
                     
                 )}

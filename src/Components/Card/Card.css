@@ -1,7 +1,7 @@
 .card{
   float: left;
-  max-width: 30%;
-  max-height: 30%;
+  max-width: 33%;
+  max-height: 33%;
   margin: 10px;
 }
 .area{
@@ -14,18 +14,24 @@
 }
 .title{
   text-align: left;
+  color: #434a54;
   }
 .actions{
-  height: 30px;
+  height: 60px;
 }
 .save{
-  width:30px;
-  height: 30px;
+  width:20px;
+  height: 20px;
   position:absolute;
-  left:-10px;
+  left:120px;
+  top: -35px;
+}
+.save:hover {
+  background: #bbb;
+  border-radius: 50px;
 }
 .expandOpen{
   transform: rotate(360deg);
-  position:absolute;
-  right:-260px;
+   position:absolute;
+  right:px; 
 }

@@ -1,17 +1,24 @@
 import React  ,{Component}from 'react';
 import './UserHomePage.css';
-import Cards from '../Card/Card.js'
+import * as firebase from 'firebase';
+import Cards from '../Card/Card.js';
 import facebook from '../facebook.svg';
-import instagram from '../instagram.svg';
-import twitter from '../twitter.svg';
-import wasfa from '../wasfa.png'
+import instagram from '../instagram.svg'
+import twitter from '../twitter.svg'
 import back from '../gray.png';
 import user from '../user.svg';
 import saved from '../saved1.svg'
 import search from '../search.svg'
-import * as firebase from 'firebase';
+import salad from '../salad.svg';
+import desert from '../sweet.svg';
+import drinks from '../drinks.svg';
+import vagen from '../vagen.svg';
+import breakfast from '../breakfast.svg.svg';
+import lunch from '../lunch.svg';
+import diner from '../breakfast.svg';
+import logout from '../logout .svg';
 
-  class User extends Component{
+class User extends Component{
 
     logout=()=>{
       firebase.auth().signOut().then(function() {
@@ -19,7 +26,7 @@ import * as firebase from 'firebase';
       }).catch(function(error) {
         // An error happened.
       });
-    }
+    };
     
     render(){
 
@@ -27,7 +34,7 @@ import * as firebase from 'firebase';
       <div className='contaner'>
         <img 
           src={back} 
-          style={{width:'100%', height:60 }}
+          style={{width:1366, height:60 }}
         />
         
 
@@ -47,6 +54,13 @@ import * as firebase from 'firebase';
             src={user}
             className='user'
           />
+          <img
+          className='logout'
+          src={logout}
+          // onClick={this.logout}
+
+          onClick={()=>this.props.history.push('/')}
+          />
 
           <a href="https://www.facebook.com/basmakuhail2003">
             <img 
@@ -64,19 +78,25 @@ import * as firebase from 'firebase';
             <img 
               src={twitter}
               className='twitterHome'/>               
-          </a>       
+          </a>
+          <div className='filterUser'>
+            <button className='FilterBreak'> <img className='imgFilter' src={breakfast}/></button>
+            <button className='FilterLunch'> <img className='imgFilter' src={lunch}/></button>
+            <button className='FilterDiner'><img className='imgFilter' src={diner}/></button>
+            <button className='buttonFilter'><img className='imgFilter' src={vagen}/></button>       
+            <button className='buttonFilter' ><img className='imgFilter' src={drinks}/></button>       
+            <button className='buttonFilter'><img className='imgFilter' src={desert}/></button>       
+            <button className='buttonFilter'> <img className='imgFilter' src={salad}/></button>
+          </div>
+       
+       
 
-          <button 
-            className="logout" 
-            onClick={()=>this.logout()}
-        >
-              Logout
-          </button>
+          <img
+          className='logout'
+          src={logout}
+          onClick={()=>this.logout()}
+          />
 
-          <img 
-              className='yummyImgUser'
-              src={'https://images.squarespace-cdn.com/content/v1/58a2fdcebebafb516ada1fe8/1540290099613-3ROW0HJZE2XYX6V0X88E/ke17ZwdGBToddI8pDm48kHAe7tJsq_QjUiQiP46BuYd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW40zwkR4L7HOs8xw3xsyz7UeCy_bEEXkaPS43zxyZdvP7cJNZlDXbgJNE9ef52e8w/Logo+Yummy.png?format=750w'}
-            />
           </div>
         <div className='cards'>
           <Cards {...this.props}/>
@@ -85,7 +105,7 @@ import * as firebase from 'firebase';
 
        
   );
-  }
+  };
 }
 
 export default User;
