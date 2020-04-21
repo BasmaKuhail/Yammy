@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import './meal.css'
 import * as firebase from 'firebase';
-import CardMedia from '@material-ui/core/CardMedia';
+import back from '../gray.png';
 
 
-//this component to show the whole info about the meal when click "learn more" on the card
 
 class Meal extends Component{
     state={
@@ -36,43 +35,38 @@ class Meal extends Component{
         console.log(this.state.meal)
 
         return(
-            <div>
-            
-                <img className='bigimgmeal' 
-                    src={'https://images.pexels.com/photos/352810/pexels-photo-352810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+            <div className='contanerMeal'>
+                <img 
+                src={back} 
+                style={{width:1360, height:60 }}
                 />
-
                 {meal.map((item)=>
 
-                <div className='meal'>
-                    <h1 className='mealName'>{item.mealName}</h1>
-                    
-                    <CardMedia
-                        className='mealImage'
-                        image={item.image}
-                    />
                 <div>
-                    <div className='space'>
-                        <p className='contents'> CONTENTS:  </p>
-                        <p className='mealContents'>{item.mealContents}</p>
-                    </div>
+                    <h1 className='mealTitle' >{item.mealName}</h1>
                 
-                    <div className='space'>
-                        <p className='contents'>RECIPE:</p>
-                        <p className='mealContents'>{item.recipe}</p>
+                    <div style={{flexDirection:"row"}}>
+                        <div style={{flexDirection:"row"}}>
+                            <p className='Title'> CONTENTS:  </p>
+                            <p className='contents' >{item.mealContents}</p>
+                        </div>
+                        <div style={{flexDirection:"row"}}>
+                            <p className='Title'>RECIPE:</p>
+                            <p className='contents'>{item.recipe}</p>
+                        </div>
+                        <div style={{flexDirection:"row"}}>
+                            <p  className='Title'>TIME:</p>
+                            <p className='contents' >{item.timeNeed}</p>
+                        </div>
+                        <div style={{flexDirection:"row"}}>
+                            <p className='Title' >TYPE:</p>
+                            <p className='contents'>{item.type}</p>
+                        </div>
+                        
                     </div>
+                    <img className='mealImg'  src={item.image}/>
 
-                    <div className='space'>
-                        <p className='contents'>TIME:</p>
-                        <p className='mealContents'>{item.timeNeed}</p>
-                    </div>
-
-                    <div className='space'>
-                        <p className='contents'>TYPE:</p>
-                        <p className='mealContents'>{item.type}</p>
-                    </div>
-                </div>
-                </div>
+               </div>
                 )}
             </div>
         );
