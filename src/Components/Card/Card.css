@@ -19,14 +19,14 @@
 .actions{
   height: 60px;
 }
-.save{
-  width:20px;
-  height: 20px;
-  position:absolute;
-  left:120px;
-  top: -35px;
+.saveCard{
+  
+  width: 20px;
+  top:-70px;
+  position: absolute;
+  left:250px
 }
-.save:hover {
+.saveCard:hover {
   background: #bbb;
   border-radius: 50px;
 }

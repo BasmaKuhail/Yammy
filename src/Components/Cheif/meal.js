@@ -69,7 +69,7 @@ class Meal extends Component{
 
                     <div className='space'>
                         <p className='contents'>TYPE:</p>
-                        <p className='mealContents'>{item.type}</p>
+                        <p className='mealContents'>{item.veg}</p>
                     </div>
                 </div>
                 </div>

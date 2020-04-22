@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.8",
     "@material-ui/icons": "^4.9.1",
+    "axios": "^0.19.2",
     "firebase": "^7.6.1",
     "material-ui-search-bar": "^1.0.0-beta.14",
     "react": "^16.10.2",

@@ -22,7 +22,7 @@ class Home extends Component{
 
     return (
       <div>
-        <img style={{width:1353, height:668,}}
+        <img style={{width:1353, height:636,}}
           src={"https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}/>  
       
         <div style={{flexDirection:"row"}}>
@@ -61,9 +61,8 @@ class Home extends Component{
 
     
         <div>
-          <h1 className='heder'> WASFA</h1>
-          <p className='enjoy'> Enjoy cooking,
-          Enjoy the taste!</p>
+          <h1 className='heder'> Wasfa!</h1>
+          <p className='enjoy'> Enjoy cooking, Enjoy the taste</p>
           <button 
             className='explore'
             onClick={()=>this.props.history.push("Card")}>

@@ -8,7 +8,7 @@ import back from '../gray.png';
 import back1 from '../back.svg'
 
 
-class Favourite extends Component{
+class favouriteChef extends Component{
 
     state={
         favMeals:[],
@@ -32,8 +32,6 @@ class Favourite extends Component{
               this.setState({uid:user.uid});
               console.log(this.state.uid);
             } else {
-                console.log("not logged in ");
-
               // User not logged in or has just logged out.
             };
 
@@ -58,15 +56,17 @@ class Favourite extends Component{
             .then((doc)=>{
                     console.log(doc.data());
                     favMeals.push(doc.data());
-                    me.setState(favMeals);
-                    console.log(favMeals)
+                    me.setState(favMeals)
 
                 });
             })
         });
 
+        console.log(currentUserMealId);
         });      
     }
+
+
         list=()=>{
 
             const db= firebase.firestore();
@@ -88,7 +88,6 @@ class Favourite extends Component{
         learnMore=(clickedMealId)=>{
             this.props.history.push('/meal', {id: clickedMealId})
          }
-
     render(){
         const {favMeals}= this.state;
         console.log(this.state.favMeals); 
@@ -103,8 +102,9 @@ class Favourite extends Component{
                 />
                 
                 <div style={{padding:14}}>
+                    <h2>My favourites</h2>
                    
-                    {/* <img 
+                    <img 
                         className='backimg' 
                         style={{
                             width:30, 
@@ -112,7 +112,7 @@ class Favourite extends Component{
                             marginLeft: 10,
                             left:0,
                             top:10}} 
-                            src={back1} onClick={()=>this.props.history.push("/user")}/> */}
+                            src={back1} onClick={()=>this.props.history.push("/cheif")}/>
                    
             
                     {favMeals.map((meal)=>
@@ -145,4 +145,4 @@ class Favourite extends Component{
     }
 }
 
-export default Favourite;
+export default favouriteChef;

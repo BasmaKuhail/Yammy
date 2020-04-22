@@ -9,12 +9,18 @@ import Meal from './Components/Cheif/meal.js';
 import MyMeals from './Components/Cheif/MyMeals';
 import User from './Components/User/UserHomePage';
 import Favourite from './Components/User/favourite';
-import Cards from './Components/Card/Card'
+import AddMeal from './Components/Cheif/add';
+import Cards from './Components/Card/Card';
 import {BrowserRouter} from 'react-router-dom';  
 import {Route, Switch} from 'react-router-dom';
 import * as firebase from 'firebase';
 import { AuthProvider } from "./Auth";
+import favouriteChef from './Components/Cheif/favouriteChef'
 import PrivateRoute from "./PrivateRoute";
+import EatTime from "./Components/eattime";
+import Vegan from "./Components/vegan";
+import Type from "./Components/type";
+import Result from "./Components/result";
 
 class App extends Component{
 
@@ -40,16 +46,23 @@ class App extends Component{
           <BrowserRouter>
             <Switch>
               <Route  path="/" component={Home} exact/>
-              <Route path='/Cards' component={Cards}/>
+              <PrivateRoute path='/Cards' component={Cards}/>
               <Route path='/Card' component={Card}/>
-              <PrivateRoute path='/add' component={Add}/>
+              <Route path='/eatTime' component={EatTime}/>
+              <Route path='/vegan' component={Vegan}/>
+              <Route path='/type' component={Type}/>
+              <Route path='/result' component={Result}/>
+
+              <Route path='/addmeal' component={AddMeal}/>
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
-              <PrivateRoute path="/cheif" component={Cheif}/>
-              <Route path="/meal" component={Meal}/>
+              <Route path="/cheif" component={Cheif}/>
+              <PrivateRoute path="/meal" component={Meal}/>
               <PrivateRoute path='/myMeals' component={MyMeals}/>
               <PrivateRoute path='/user' component={User}/>
               <PrivateRoute path='/favourite' component={Favourite}/>
+              {/* <PrivateRoute path='/favouriteChef' component={favouriteChef}/> */}
+
             </Switch>
           
           </BrowserRouter>

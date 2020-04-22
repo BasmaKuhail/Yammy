@@ -40,7 +40,7 @@ input[type=text] {
 }
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-  width: 30%;
+  width: 15%;
 }
 .search{
   position:absolute;
@@ -117,19 +117,19 @@ input[type=text]:focus {
 .FilterBreak{
   border-radius: 100px;
   border: none;
-  background-color: #fd6700;
+  background-color: #e73dbd;
   margin:3px;
 }
 .FilterLunch{
   border-radius: 100px;
   border: none;
-  background-color: #fd6700;
+  background-color: #e73dbd;
   margin:3px;
 }
 .FilterDiner{
   border-radius: 100px;
   border: none;
-  background-color: #fd6700;
+  background-color: #e73dbd;
   margin:3px;
 
 }
