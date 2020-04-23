@@ -96,6 +96,7 @@ class Cards extends Component{
                                 image={meal.image}
                                 onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
+                                  style={{color:'#434a54', textAlign: 'left'}}
                                 className='title'
                                 title= {meal.mealName}
                                 onClick={()=>this.learnMore(meal.id)}/>

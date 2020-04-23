@@ -1,76 +1,76 @@
 .base-containerAdd{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align:"center";
-    position: relative;
-  
-  }
-  .bigimg{
-    width:100%;
-    height:100% ;
-  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:"center";
+  position: relative;
 
-  .addMeal { 
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-  
-  }
-  .headerAdd {
-    font-size:40px;
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    color:#ffa801;
-    margin: 10px;
-  }
+}
+.bigimg{
+  width:100%;
+  height:100% ;
+}
 
-  .yellowButtonAdd {
-    background-color: #ffa801;
-    border-Radius: 2px;
-    padding: 9px;
-    margin:10px;
-    padding: 16px 20px;
-    border: none;
-    width: 400px;
-    opacity: 0.9;
-    font-size: 14px;
+.addMeal { 
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
 
-  }
-.inputAdd{
-  width:380px;
-  height: 30px;
+}
+.headerAdd {
+  font-size:40px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color:#ffa801;
+  margin: 10px;
+}
+
+.yellowButtonAdd {
+  background-color: #ffa801;
+  border-Radius: 2px;
   padding: 9px;
   margin:10px;
+  padding: 16px 20px;
   border: none;
+  width: 400px;
   opacity: 0.9;
-  border-Radius: 2px;
-  background: white;
+  font-size: 14px;
+
+}
+.inputAdd{
+width:380px;
+height: 30px;
+padding: 9px;
+margin:10px;
+border: none;
+opacity: 0.9;
+border-Radius: 2px;
+background: white;
 }
 .textarea{
-  width:380px;
-  height: 100px;
-  padding: 9px;
-  margin:10px;
-  border: none;
-  opacity: 0.9;
-  border-Radius: 2px;
-  background: white;
+width:380px;
+height: 100px;
+padding: 9px;
+margin:10px;
+border: none;
+opacity: 0.9;
+border-Radius: 2px;
+background: white;
 
 }
 .text1Add {
-    font-size: 20px;
-    padding: 10px;
-  
-  }
-  .text4Add {
-    font-size: 20px;
-    padding: 15px;
-  }
- 
+  font-size: 20px;
+  padding: 10px;
+
+}
+.text4Add {
+  font-size: 14px;
+  padding: 15px;
+}
+

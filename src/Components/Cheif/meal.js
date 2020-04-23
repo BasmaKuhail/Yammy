@@ -7,7 +7,7 @@ import back from '../gray.png';
 
 class Meal extends Component{
     state={
-        meal:[]
+        meal:{}
       }
   
       componentDidMount(){
@@ -17,21 +17,18 @@ class Meal extends Component{
           const db = firebase.firestore();
           const {meal} = this.state;
           let me = this;
-
-        
           db.collection('meals').doc(state.id)
                 .get()
                 .then((doc)=>{
                         console.log(doc.data());
-                        meal.push(doc.data());
-                        me.setState(meal)
+                     
+                        me.setState({meal:doc.data()})
 
                     });
-
       }
 
     render(){
-        const {meal}= this.state;
+        const {meal:item}= this.state;
         console.log(this.state.meal)
 
         return(
@@ -40,8 +37,7 @@ class Meal extends Component{
                 src={back} 
                 style={{width:1360, height:60 }}
                 />
-                {meal.map((item)=>
-
+               
                 <div>
                     <h1 className='mealTitle' >{item.mealName}</h1>
                 
@@ -60,14 +56,14 @@ class Meal extends Component{
                         </div>
                         <div style={{flexDirection:"row"}}>
                             <p className='Title' >TYPE:</p>
-                            <p className='contents'>{item.type}</p>
+                            <p className='contents'>{item.veg}</p>
                         </div>
                         
                     </div>
                     <img className='mealImg'  src={item.image}/>
 
                </div>
-                )}
+            
             </div>
         );
     }

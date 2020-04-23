@@ -4,7 +4,7 @@
 }
 
   .buttonAdd{
-    background-color: #5dd1f8;
+    background-color: #fd6700;
     width: 60px;
     height: 60px;
     border-Radius: 1000px;
@@ -37,6 +37,10 @@
   .buttonMyMeals:hover {
     background: #bbb;
   }
+
+  .user{
+    border-radius: 50/2
+  }
   .Top-left {
     position: absolute;
     top: 8px;
@@ -56,7 +60,6 @@
   top:15px;
   }
   .logout:hover {
-    background: #bbb;
     border-radius: 30px;
 
   }
@@ -85,4 +88,72 @@
   .cards{
     margin: 10px;
     display:inline-block;
+  }
+
+
+  .filterUser{
+    position:absolute;
+    top:10px;
+    margin-right:95px;
+  
+  }
+  .buttonFilter{
+    border-radius: 100px;
+    border: none;
+    background-color: #5dd1f8;
+    margin:3px;
+  }
+
+  .occasionsFilter{
+    border-radius: 100px;
+    border: none;
+    background-color: #5dd1f8;
+    right:3px;
+    margin: 3px
+  }
+  .buttonFilter, .occasionsFilter:hover {
+    background: #bbb;
+  }
+  .vegan{
+    border-radius: 100px;
+    border: none;
+    background-color: #5dd1f8;
+    right:3px;
+  }
+  .vegan:hover {
+    background: #bbb;
+  }
+  .imgFilter{
+    width:60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+  .FilterBreak1{
+    border-radius: 100px;
+    border: none;
+    background-color: #fd6700;
+    margin:3px;
+  }
+  .FilterLunch1{
+    border-radius: 100px;
+    border: none;
+    background-color: #fd6700;
+    margin:3px;
+  }
+  .FilterDiner1{
+    border-radius: 100px;
+    border: none;
+    background-color: #fd6700;
+    margin:3px;
+  
+  }
+  
+  .FilterBreak1:hover {
+    background: #bbb;
+  }
+  .FilterLunch1:hover {
+    background: #bbb;
+  }
+  .FilterDiner1:hover {
+    background: #bbb;
   }

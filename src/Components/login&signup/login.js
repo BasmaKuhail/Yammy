@@ -78,15 +78,15 @@ class Login extends Component{
 
     render(){
         const { currentUser } = this.context
-        if (currentUser) {
+        // if (currentUser) {
 
 
-            console.log(currentUser)
-        }
-        else{
-            return <Redirect to="/" />;
+        //     console.log(currentUser)
+        // }
+        // else{
+        //     return <Redirect to="/" />;
 
-        }
+        // }
         
 
         return(

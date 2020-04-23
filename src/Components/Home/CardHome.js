@@ -128,6 +128,7 @@ class Cards extends Component{
                                 image={meal.image}
                             />
                              <CardHeader 
+                                style={{color:'#434a54', textAlign: 'left'}}
                                 className='title'
                                 title= {meal.mealName}
                             />

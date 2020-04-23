@@ -3,6 +3,8 @@ import './HomePage.css';
 import facebook from '../facebook.svg';
 import instagram from '../instagram.svg';
 import twitter from '../twitter.svg';
+import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import RestaurantIcon from '@material-ui/icons/Restaurant';
 
 
 class Home extends Component{
@@ -20,7 +22,7 @@ class Home extends Component{
 
     return (
       <div>
-        <img style={{width:1353, height:668,}}
+        <img style={{width:1350, height:667,}}
           src={"https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}/>  
       
         <div style={{flexDirection:"row"}}>
@@ -49,10 +51,10 @@ class Home extends Component{
       
         <div className='buttonsHome'>
         
-          <button className='aboutUs'>About us</button>
+          <button className='aboutUs' onClick={()=>this.props.history.push("about")}>About us</button>
           <button className='home'>Home</button>
           <button className='signUpHome' onClick={()=>this.props.history.push("SignUp")}>
-            Sign up
+            Sign up/Login
           </button>
 
         </div>

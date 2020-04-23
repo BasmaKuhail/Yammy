@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Cards from '../Home/CardHome';
 import * as firebase from 'firebase';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,47 +7,30 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import back from '../gray.png';
-import back1 from '../back.svg'
-import more from '../more.svg'
+import back from './gray.png';
+import more from './more.svg'
+import { teal } from '@material-ui/core/colors';
 
 
-class MyMeals extends Component{
+class Vegan extends Component{
 
     state={
         meals:[],
-        uid:"",
     }
 
 
     componentDidMount(){
-
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-              // User logged in already or has just logged in.
-              console.log(user.uid);
-              this.setState({uid:user.uid});
-              console.log(this.state.uid);
-            } else {
-              // User not logged in or has just logged out.
-            };
-            console.log("The user id is =>" + this.state.uid)
 
         
 
 
         const db= firebase.firestore();
         let me = this;
-        console.log("The user id is =>" + this.state.uid)
 
-                db.collection("meals").where("usid", "==",this.state.uid)
+                db.collection("meals").where("veg", "==","Veg")
                 .get()
                 .then((querySnapshot)=>{
                     querySnapshot.forEach((doc)=> {
-                        // doc.data() is never undefined for query doc snapshots
-                        // console.log(doc.id, " => ", doc.data());
-                        // this.state.meals.push(doc.data());
-                        // me.setState(this.state.meals)
                         const fetchedMealData = {
                             id: doc.id,
                             ...doc.data()
@@ -61,7 +43,7 @@ class MyMeals extends Component{
         
                 });
 
-            });
+            
     }
 
     getMealId=(clickedMealId)=> {
@@ -102,20 +84,11 @@ class MyMeals extends Component{
                     src={back} 
                     style={{width:1366, height:60 }}
                 />
+                    <text style={{ color:'#fd6700',fontSize:30, fontWeight:"bold" }}>Here are vegan meals</text>
+
                 <div style={{padding:14}}>
-                   
-                   <img 
-                       className='backimg' 
-                       style={{
-                           width:30, 
-                           position:'absolute' ,
-                           marginLeft: 10,
-                           left:0,
-                           top:10}} 
-                           src={back1} onClick={()=>this.props.history.push("/cheif")}/>
 
                 {meals.map((meal)=>
-
                     <Card className='card'>
 
                         <CardActionArea
@@ -126,6 +99,7 @@ class MyMeals extends Component{
                                 image={meal.image}
                                 onClick={()=>this.learnMore(meal.id)}/>
                             <CardHeader 
+                              style={{color:'#434a54', textAlign: 'left'}}
                                 className='title'
                                 title= {meal.mealName}
                                 onClick={()=>this.learnMore(meal.id)}/>
@@ -137,11 +111,7 @@ class MyMeals extends Component{
                         </Card>
                     
                 )}
-                 <button 
-              className="buttonAdd" 
-              onClick={()=>this.props.history.push('/add')}>
-                <img  className='more' src={more}/>
-            </button>
+                 
             </div>
             </div>
                 
@@ -150,4 +120,4 @@ class MyMeals extends Component{
     }
 }
 
-export default MyMeals;
+export default Vegan;
