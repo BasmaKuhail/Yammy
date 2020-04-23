@@ -72,6 +72,7 @@
 }
 .enjoy{
   font-size:26px;
+  max-width: 400px;
   color:white;
   position: absolute;
   top: 320px;

@@ -53,10 +53,10 @@ class App extends Component{
               <Route path='/type' component={Type}/>
               <Route path='/result' component={Result}/>
 
-              <Route path='/addmeal' component={AddMeal}/>
+              <PrivateRoute path='/addmeal' component={AddMeal}/>
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
-              <Route path="/cheif" component={Cheif}/>
+              <PrivateRoute path="/cheif" component={Cheif}/>
               <PrivateRoute path="/meal" component={Meal}/>
               <PrivateRoute path='/myMeals' component={MyMeals}/>
               <PrivateRoute path='/user' component={User}/>

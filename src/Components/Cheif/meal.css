@@ -1,50 +1,36 @@
-.meal{
-    position: absolute;
-    top: 550px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    background: #fffde7; /* Black background with 0.5 opacity */
-    padding-left: 100px;
-    padding-right: 100px;
-    border-radius: 20px;
+.contanerMeal{
+    background-color:#f0f2f5;
 }
-
-.bigimgmeal{
-    height:1300px;
-    width: 1350px;
+.mealTitle{
+    margin-left:20px;
+    font-size: 50px;
+    color: #fd6700;
+    font-family: "Lucida Console", Courier, monospace;
+    
 }
-.mealImage{
-    position: -ms-page;
+.mealImg{
+    max-width:30%;
+    max-height: 30%;
+    margin-left: 900px;
+    margin-top: -250px;
     border-radius: 10px;
-    margin:10px;
-    height: 400px;
-    width: 450px;
-    -webkit-box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
-    box-shadow: 9px 9px 8px -5px rgba(0,0,0,0.75);
-
+    -webkit-box-shadow: 0px 1px 0px 5px rgba(67,74,84,1);
+    -moz-box-shadow: 0px 1px 0px 5px rgba(67,74,84,1);
+    box-shadow: 0px 1px 0px 5px rgba(67,74,84,1);
 }
 
-.mealName{
-    transform: translate(40%, 50%);
-    font-size: 44px;
-    color: #fb8c00;
-    margin:40px;
+.Title{
+    margin-left: 40px;
+    font-size: 20px;
+    color: #fd6700;
+    font-family: "Lucida Console", Courier, monospace;
 
 }
-
 .contents{
-  font-size: 24px;
-  color: #ffa801;
+    font-size: 20px;
+    margin-left: 200px;
+    margin-top: -45px;
+    color: #55616f;
 
-}
-.mealContents{
-    font-size: 18px;
-}
 
-.space{
-    padding:10px;
 }

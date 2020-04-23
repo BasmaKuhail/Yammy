@@ -52,7 +52,7 @@ class Home extends Component{
         <div className='buttonsHome'>
         
           <button className='aboutUs'>About us</button>
-          <button className='home'>Home</button>
+          <button className='home' onClick={()=>this.props.history.push("Card")}>Home</button>
           <button className='signUpHome' onClick={()=>this.props.history.push("SignUp")}>
             Sign up/Login
           </button>
