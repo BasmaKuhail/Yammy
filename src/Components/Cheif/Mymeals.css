@@ -1,0 +1,38 @@
+.card{
+    float: left;
+    max-width: 100%;
+    max-height: 33%;
+    margin: 8px;
+  }
+  .area{
+    height: 280px;
+  }
+  
+  .media2{
+    height: 220px;
+    width: 253px;
+  }
+  .title{
+    color: rgb(245, 80, 3);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background: #bbbb;
+  }
+  .title:hover{
+    background-color: #bbb;
+  }
+  
+  .actions{
+    height: 60px;
+  }
+
+  .expandOpen{
+    transform: rotate(360deg);
+     position:absolute;
+    right:px; 
+  }
+  .meals{
+    margin-left:0px;
+    display:inline-block;
+  }
+

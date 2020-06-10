@@ -4,8 +4,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import back from '../gray.png';
-import back1 from '../back.svg'
+import chef from '../chef.svg';
+import ChefLayOut from '../chefLayOut'
+
 
 
 class favouriteChef extends Component{
@@ -16,14 +17,12 @@ class favouriteChef extends Component{
         currentUserMealId:[]
     }
 
-
     componentDidMount(){
 
         const db= firebase.firestore();
         let me = this;
         const {currentUserMealId, favMeals}= this.state; 
 
-        this.list(); 
 
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
@@ -32,6 +31,8 @@ class favouriteChef extends Component{
               this.setState({uid:user.uid});
               console.log(this.state.uid);
             } else {
+                console.log("not logged in ");
+
               // User not logged in or has just logged out.
             };
 
@@ -55,91 +56,75 @@ class favouriteChef extends Component{
             .get()
             .then((doc)=>{
                     console.log(doc.data());
-                    favMeals.push(doc.data());
-                    me.setState(favMeals)
+                    const fetchedMealData = {
+                      id: doc.id,
+                      ...doc.data()
+                    };
+                    favMeals.push(fetchedMealData);
+                    me.setState(favMeals);
+                    console.log(favMeals)
 
                 });
             })
         });
 
-        console.log(currentUserMealId);
         });      
     }
-
-
-        list=()=>{
-
-            const db= firebase.firestore();
-            let me = this;
-            const {currentUserMealId, favMeals}= this.state; 
-
-            currentUserMealId.forEach(id => {
-                console.log(id);
-                db.collection('meals').doc(id)
-                .get()
-                .then((doc)=>{
-                        console.log(doc.data());
-                        favMeals.push(doc.data());
-                        me.setState(favMeals)
-    
-                    });
-                });
-        }
-        learnMore=(clickedMealId)=>{
+     learnMore=(clickedMealId)=>{
             this.props.history.push('/meal', {id: clickedMealId})
          }
+
+
     render(){
         const {favMeals}= this.state;
         console.log(this.state.favMeals); 
 
 
         return(
-
-            <div className='contaner'>
-                <img 
-                    src={back} 
-                    style={{width:1366, height:60 }}
-                />
-                
-                <div style={{padding:14}}>
-                    <h2>My favourites</h2>
-                   
-                    <img 
-                        className='backimg' 
-                        style={{
-                            width:30, 
-                            position:'absolute' ,
-                            marginLeft: 10,
-                            left:0,
-                            top:10}} 
-                            src={back1} onClick={()=>this.props.history.push("/cheif")}/>
-                   
             
-                    {favMeals.map((meal)=>
+            
+            <div>
+               <ChefLayOut {...this.props}/>
 
-                        <Card className='card'>
+<div className="main">
+<h2 style={{color:"rgb(245, 80, 3)",marginTop:80, fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", fontSize:34}}>My favourite meals</h2>   
+         <div onClick={()=>this.props.history.push('/cheif')}>
+         <img 
+           src={chef}
+           className='user'
+         /> 
+         </div>
+         <div/>
+                    <div>
+         
+                         {favMeals.map((meal)=>
+    
+                            <Card className='card'>
+    
+                            <CardActionArea
+                            className='area'
+                            >
+                                <CardMedia
+                                    className='media'
+                                    image={meal.image}
+                                    onClick={()=>this.learnMore(meal.id)}/>
+                                <CardHeader 
+                                    className='title'
+                                    title= {meal.mealName}
+                                    onClick={()=>this.learnMore(meal.id)}/>
+                            
+                            </CardActionArea>
+    
+    
+    
+                            </Card>
+                        )}
 
-                        <CardActionArea
-                        className='area'
-                        >
-                            <CardMedia
-                                className='media'
-                                image={meal.image}
-                                onClick={()=>this.learnMore(meal.id)}/>
-                            <CardHeader 
-                                className='title'
-                                title= {meal.mealName}
-                                onClick={()=>this.learnMore(meal.id)}/>
-                        
-                        </CardActionArea>
+</div>
+</div>
+</div>
 
 
-
-                        </Card>
-                    )}
-                </div>
-            </div>
-                
 
         )
     }

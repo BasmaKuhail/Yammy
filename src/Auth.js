@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   if(pending){
-    return <>Loading...</>
+    return <h1>Loading</h1>
   }
 
   return (

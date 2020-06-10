@@ -1,8 +1,8 @@
 .card{
   float: left;
-  max-width: 33%;
+  max-width: 35%;
   max-height: 33%;
-  margin: 10px;
+  margin: 9px;
 }
 .area{
   height: 280px;
@@ -10,12 +10,18 @@
 
 .media{
   height: 220px;
-  width: 300px;
+  width: 256px;
 }
 .title{
-  text-align: left;
-  color: #434a54;
-  }
+  color: rgb(245, 80, 3);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  background: #bbbb;
+}
+.title:hover{
+  background-color: #bbb;
+}
+
 .actions{
   height: 60px;
 }
@@ -24,10 +30,14 @@
   width: 20px;
   top:-70px;
   position: absolute;
-  left:250px
+  left:217px;
+  background: transparent;
+
+
 }
 .saveCard:hover {
   background: #bbb;
+
   border-radius: 50px;
 }
 .expandOpen{

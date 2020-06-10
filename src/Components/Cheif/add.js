@@ -1,23 +1,18 @@
-import React  ,{Component} from 'react';
-import './add.css'
-import * as firebase from 'firebase';
-import facebook from '../facebook.svg';
-import instagram from '../instagram.svg'
-import twitter from '../twitter.svg';
-import back from '../gray.png';
-import search from '../search.svg'
+import React  ,{Component}from 'react';
+import './add.css';
+import Cards from '../Card/Card.js'
 import chef from '../chef.svg';
-import more from '../more.svg';
-import saved from '../saved1.svg';
-import logout from '../logout .svg';
-import axios from 'axios';
-
+import * as firebase from 'firebase';
+import ChefLayOut from '../chefLayOut'
+import FileUploader from "react-firebase-file-uploader";
+import axios from 'axios'
 
 
 class AddMeal extends Component{
     state={
         uid:"",
-        selectedFile: null,
+        image: null,
+        url:"",
         occasions:[],
         eatTime:[],
         // checked:false
@@ -41,8 +36,9 @@ class AddMeal extends Component{
               // User not logged in or has just logged out.
             };
           });
+        }
         
-    }
+    
 
    
  
@@ -55,6 +51,13 @@ class AddMeal extends Component{
         })
 
     }
+
+    handleImageChange = e => {
+        if (e.target.files[0]) {
+          const image = e.target.files[0];
+          this.setState(() => ({image}));
+        }
+      }
 
     handleChangeCheckbox=(e)=>{
         console.log(e.target.checked);
@@ -117,20 +120,28 @@ class AddMeal extends Component{
 
         
     }
-
-    fileChangedHandler = event => {
-        this.setState({ selectedFile: event.target.files[0] })
-      }
-
-      uploadHandler = () => {
-        const formData = new FormData()
-        formData.append(
-          'image',
-          this.state.selectedFile,
-          this.state.selectedFile.name
-        )
-        axios.post('my-domain.com/file-upload', formData)
-      }
+    handleUpload = () => {
+        const storage = firebase.storage();
+        const {image} = this.state;
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on('state_changed', 
+        (snapshot) => {
+          // progrss function ....
+          const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          this.setState({progress});
+        }, 
+        (error) => {
+             // error function ....
+          console.log(error);
+        }, 
+      () => {
+          // complete function ....
+          storage.ref('images').child(image.name).getDownloadURL().then(url => {
+              console.log(url);
+              this.setState({url});
+          })
+      });
+    }
 
     logout=()=>{
         firebase.auth().signOut().then(function() {
@@ -143,7 +154,7 @@ class AddMeal extends Component{
     AddMeal = ()=>{
         const db = firebase.firestore();
 
-        const {name , contents , recipe , time ,veg, image, uid, occasions, eatTime, servers, region, clasifiction} = this.state;
+        const {name , contents , recipe , avatar,time ,veg, url, uid, occasions, eatTime, servers, region, clasifiction} = this.state;
       
 
         console.log(this.state)
@@ -153,7 +164,7 @@ class AddMeal extends Component{
             recipe: recipe,
             timeNeed: time,
             veg: veg,
-            image: image,           
+            image: url,           
             usid :uid,
             occasions: occasions,
             TimeToEat:eatTime,
@@ -177,65 +188,23 @@ class AddMeal extends Component{
 
         return(
             <div>
-                <img 
-          src={back} 
-          style={{width:1366, height:60 }}
-        />
-          
-          <img 
-          className="savedChef" 
-          src={saved}
-          onClick={()=>this.props.history.push('/favourite')}
-        />
-          <div style={{flexDirection:"row"}}>
-          <button className='searchButton'>
-            <img style={{width:20,height:20}} src={search}/>
-          </button>
-          <input className='search' type="text" name="search" placeholder="Search.."/>
-        
-          <img 
+            <div>
+            <ChefLayOut {...this.props}/>
+            </div>
+<div className="main">
+        <div onClick={()=>this.props.history.push('/cheif')}>
+        <img 
             src={chef}
             className='user'
           />
-
-          <img
-          className='logout'
-          src={logout}
-          onClick={()=>this.logout()}
-          />
-
-          <a href="https://www.facebook.com/basmakuhail2003">
-            <img 
-              src={facebook}
-              className='facebookUser'/> 
-          </a>
-
-          <a href="https://www.facebook.com/basmakuhail2003">
-            <img 
-              src={instagram}
-              className='instagramUser'/>
-          </a>
-
-          <a href="https://www.facebook.com/basmakuhail2003">
-            <img 
-              src={twitter}
-              className='twitterHome'/>               
-          </a>
-
-            <button 
-              className="buttonMyMeals" 
-              onClick={()=>this.props.history.push('/myMeals')}>
-                My Meals
-            </button>
           </div>
-          <div className="bg">
+          <div className="cards">
+             <div className="form">
+             <h1 className="Header">Adding meal form </h1>
+             <h1 className="subTitle">Share your meals with us!</h1>
 
-            <div className="form">
-            <h1 className="title">Adding meal form </h1>
-            <h1 className="subTitle">Share your meals with us!</h1>
-
-            <div>
-                <input 
+             <div>
+                 <input 
                     className="inputAdd"  
                     name="name" 
                     placeholder ="Meal's name"
@@ -247,9 +216,9 @@ class AddMeal extends Component{
             <div>
                 <input 
                     className="inputAdd2" 
-                    type="number" 
+                    type="text" 
                     name="time" 
-                    placeholder ="Prepartion and cooking time(in minutes)"
+                    placeholder ="Prepartion and cooking time"
                     onChange={this.handleChange}
                     required
                 />
@@ -286,15 +255,23 @@ class AddMeal extends Component{
                 </textarea> 
 
             </div>
-            <div>
-                <input 
+            <div style={{paddingLeft:10}}>
+                {/* <input 
                     className="inputAdd"  
                     name="image"
                     type="text"
                     placeholder ="Drop the meal's image url"
                     onChange={this.handleChange}
                     required
-                /> 
+                />  */}
+        <input type="file" onChange={this.handleImageChange} className="inputAdd-image"/>
+        <button className="upload" onClick={this.handleUpload}>Upload</button>
+        <br/>
+
+        <progress value={this.state.progress} max="100"/>
+
+        <br/>
+        <img src={this.state.url || 'http://via.placeholder.com/300x200'} alt="Uploaded images" height="300" width="400"/>
  
                 
             </div>
@@ -328,7 +305,7 @@ class AddMeal extends Component{
                         type="radio" 
                         name='region' 
                         onChange={this.handleChange} 
-                        value="west"
+                        value="westren"
                         required
                     />
                     <text className='text4Add'>Westren</text>
@@ -337,7 +314,7 @@ class AddMeal extends Component{
                         type="radio" 
                         name='region' 
                         onChange={this.handleChange} 
-                        value="east"
+                        value="eastren"
                         required
                     />
                     <text className='text4Add'>Eastren</text>
@@ -346,7 +323,7 @@ class AddMeal extends Component{
                         type="radio" 
                         name='region' 
                         onChange={this.handleChange} 
-                        value="east"
+                        value="asian"
                         required
                     />
                     <text className='text4Add'>Asian</text>
@@ -531,7 +508,7 @@ class AddMeal extends Component{
                     <div className="oneClasify">
                     <input
                     className="btn"
-                    name="birthday"
+                    name="Birthday"
                     type="checkbox"
                     checked={this.state.checked}
                     onChange={this.handleChangeCheckbox} />
@@ -541,7 +518,7 @@ class AddMeal extends Component{
                     <div className="oneClasify">
                     <input
                     className="btn"
-                    name="picnic"
+                    name="Picnic"
                     type="checkbox"
                     checked={this.state.checked}
                     onChange={this.handleChangeCheckbox} />
@@ -635,11 +612,14 @@ class AddMeal extends Component{
                 <button className="Add" onClick={this.AddMeal}>Add meal</button>
             </div>
 
-        </div>
     </div>
-        )
+</div>
+        </div>
+
+
+        );
+        }
     }
 
-}
 
 export default AddMeal;

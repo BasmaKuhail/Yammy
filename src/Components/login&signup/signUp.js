@@ -11,7 +11,6 @@ class SignUp extends Component{
         password:"",
         chief_checked:false,
         user_checked:false,
-
     }
 
     addUser = ()=>{
@@ -26,7 +25,7 @@ class SignUp extends Component{
             db.collection("users").doc(user.uid).set({
                 Email:email,
                 Username:username,
-                userType: type
+                userType: type,
     
     
             })
@@ -136,7 +135,7 @@ class SignUp extends Component{
                                 value="user" 
                                 onChange={this.handleChange} 
                             />
-                            user
+                            Learner
                         </text>  
 
                         <text className='text7'>

@@ -14,7 +14,7 @@ import ChefLayOut from './chefLayOut';
 import UserLayOut from './userLayOut'
 
 
-class Type extends Component{
+class Region extends Component{
 
     state={
         meals:[], 
@@ -57,28 +57,29 @@ class Type extends Component{
                 else{
                     //
                 }
-            });
-        });
+            }).then(()=>{
 
         console.log('mealType', state.id);
         this.setState({name:state.id})
         const {meals}= this.state;
 
-        db.collection("meals").where("clasifiction", "==",state.id)
+        db.collection("meals").where("region", "==",state.id)
         .get()
         .then((querySnapshot)=>{
             querySnapshot.forEach((doc)=> {
                 // doc.data() is never undefined for query doc snapshots
+                console.log(doc)
                 const fetchedMealData = {
                     id: doc.id,
                     ...doc.data()
                   };
-                  console.log("fetchedMealData")
+                  console.log(fetchedMealData)
                 meals.push(fetchedMealData);
                 me.setState(meals)
         });
-        })
-    
+        });
+    });
+});
     }
     getMealId=(clickedMealId)=> {
         const {favMeals,uid}=this.state;
@@ -152,7 +153,7 @@ class Type extends Component{
                    
                     <div>{layout}</div>
                     <div style={{marginLeft: 245}}>
-                    <div style={{color:"rgb(245, 80, 3)", fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", fontSize:34,fontWeight:"bold", marginTop:80}}>{this.state.name} </div>
+                    <div style={{color:"rgb(245, 80, 3)", fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", fontSize:34,fontWeight:"bold", marginTop:80}}>{this.state.name}'s meals </div>
                    
             
                     {meals.map((meal)=>
@@ -198,4 +199,4 @@ class Type extends Component{
     }
 }
 
-export default Type;
+export default Region;

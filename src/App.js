@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Home from './Components/Home/HomePage.js';
 import Card from './Components/Home/CardHome'
-import Add from './Components/Cheif/AddMeal.js'
+import AboutUs from './Components/Home/aboutus'
 import SignUp from './Components/login&signup/signUp';
 import Login from './Components/login&signup/login';
 import Cheif from './Components/Cheif/CheifHomePage';
@@ -18,9 +18,17 @@ import { AuthProvider } from "./Auth";
 import favouriteChef from './Components/Cheif/favouriteChef'
 import PrivateRoute from "./PrivateRoute";
 import EatTime from "./Components/eattime";
+import Region from "./Components/region";
+
 import Vegan from "./Components/vegan";
 import Type from "./Components/type";
+import Occasion from './Components/occasion'
 import Result from "./Components/result";
+import Catigories from "./Components/catigories";
+import ChefLayOut from "./Components/chefLayOut";
+import UserLayOut from "./Components/userLayOut";
+
+
 
 class App extends Component{
 
@@ -46,22 +54,26 @@ class App extends Component{
           <BrowserRouter>
             <Switch>
               <Route  path="/" component={Home} exact/>
+              <PrivateRoute  path="/ChefLayOut" component={ChefLayOut} />
+              <PrivateRoute  path="/userLayOut" component={UserLayOut} />
               <PrivateRoute path='/Cards' component={Cards}/>
               <Route path='/Card' component={Card}/>
               <Route path='/eatTime' component={EatTime}/>
+              <Route path='/region' component={Region}/>
+              <Route path='/occasion' component={Occasion}/>
+              <Route path='/about' component={AboutUs}/>
               <Route path='/vegan' component={Vegan}/>
               <Route path='/type' component={Type}/>
               <Route path='/result' component={Result}/>
-
-              <PrivateRoute path='/addmeal' component={AddMeal}/>
+              <PrivateRoute path='/add' component={AddMeal}/>
               <Route path="/SignUp" component={SignUp}/>
               <Route path="/Login" component={Login}/>
               <PrivateRoute path="/cheif" component={Cheif}/>
-              <PrivateRoute path="/meal" component={Meal}/>
+              <Route path="/meal" component={Meal}/>
               <PrivateRoute path='/myMeals' component={MyMeals}/>
               <PrivateRoute path='/user' component={User}/>
               <PrivateRoute path='/favourite' component={Favourite}/>
-              {/* <PrivateRoute path='/favouriteChef' component={favouriteChef}/> */}
+              <PrivateRoute path='/favouriteChef' component={favouriteChef}/>
 
             </Switch>
           

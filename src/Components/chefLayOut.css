@@ -1,15 +1,19 @@
-  .topnav {
+.topnav {
     height: 70px;
     overflow: hidden;
   background-color: #434A54;
+  position: fixed;
+  top:0; 
+  width:100%;
+  z-index:99;
 }
 
 .searchBox{
   height: 34px;
   margin-top:17px;
-  background-color:#55616f;
+  background-color:#fff;
   height: 33px;
-  width: 303px;
+  width:300px;
   border-radius:2px ;
   border: none;
   padding-left: 20px;
@@ -20,12 +24,12 @@
 .searchbtn{
 
     top:17px;
-  left:0px;
-  width:170px;
+  left:570px;
+  width:165px;
   height: 35px;
   border: none;
   border-radius: 2px;
-  background-color:#55616f;
+  background-color:#fff;
   color: rgb(245, 80, 3);
   font-weight: bold;
 
@@ -35,8 +39,7 @@
 }
 
 .signUp{
-  z-index: 1000;
-  position: fixed;
+
     top:17px;
   left:1200px;
   width:90px;
@@ -135,6 +138,7 @@
   left: 0;
   background-color: #434A54;
   overflow-x: hidden;
+  z-index:999;
 }
 
 .welcome{
@@ -214,16 +218,6 @@
   background: #bbb;
 }
 
-.main {
-  margin-left: 245px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  z-index: 0;
-  margin-top: 90px;
-
-  
-}
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -242,4 +236,37 @@
 
   .user{
     border-radius: 50/2
+  }
+
+
+  .body {
+    margin-left: 245px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    z-index: 0;
+    
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }

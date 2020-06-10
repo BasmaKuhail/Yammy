@@ -2,7 +2,7 @@
   position:absolute;
   width:40px;
   margin-left: 50px;
-  right:60px; 
+  left:560px; 
   top:575px;
 }
 .instegramHome{
@@ -10,56 +10,55 @@
   width:40px;
   top:575px;
   margin-left: 0px; 
-  right:120px;
+  left:700px;
 }
 .tiwitterHome{
   position:absolute;
   width:40px;
   top:575px;
   margin-left: 50px; 
-  right:180px;
+  left:740px;
 }
 .buttonsHome{
   position:absolute;
-  right:60px; 
-  top:30px;
+    top:30px;
   flex-direction:row;
 }
 .aboutUs{
   background-color: #00000000;
-  width: 120px;
+  width: 130px;
   border-radius: 20px;
-  border: 2px solid;
+  border: none;
   border-color:#fd6700;
-  font-size: 18px;
-  color:white;
+  font-size: 22px;
+  color:#fc8a00;
   font-weight:bold;
-  margin-right:20px;
+  margin-left:80px;
   padding:16px;
 }
 .home{
   background-color: #00000000;
   width: 120px;
   border-radius: 20px;
-  border: 2px solid;
+  border: none;
   border-color:#fd6700;
-  font-size: 18px;
-  color:white;
+  font-size: 22px;
+  color:#fc8a00;
   font-weight:bold;
-  margin-right:20px;
+  margin-left:20px;
   padding:16px;
         
 }
 .signUpHome{
   background-color: #00000000;
-  width: 160px;
+  width: 170px;
   border-radius: 20px;
-  border: 2px solid;
+  border: none;
   border-color:#fd6700;
-  font-size: 16px;
-  color:white;
+  font-size: 20px;
+  color:#fc8a00;
   font-weight:bold;
-  margin-right:20px;
+  margin-left:20px;
   padding:16px;
 }
 .heder{
@@ -67,30 +66,43 @@
   color:white;
   margin-bottom:5px;
   position: absolute;
-  top: 200px;
-  left: 100px;
+  top: 100px;
+  left: 600px;
 }
 .enjoy{
-  font-size:26px;
-  max-width: 400px;
+  font-size:23px;
+  max-width: 450px;
   color:white;
   position: absolute;
-  top: 320px;
-  left: 115px;
+  top: 240px;
+  left:510px
 }
 .explore{
   background-color: #00000000;
-  width: 150px;
+  width: 220px;
+  border: none;
   border-radius: 20px;
-  border: 2px solid;
-  border-color:#fd6700;
-  font-size: 18px;
+  border-color:white;
+  font-size: 28px;
   font-weight:bold;
-  color:white;
+  color:#fc8a00;
   padding:16px;
   position: absolute;
-  top: 420px;
-  left: 120px;
+  top: 300px;
+  left: 609px;
+}
+
+.explore:hover{
+  color: #bbb
+}
+.aboutUs:hover{
+  color: #bbb
+}
+.home:hover{
+  color: #bbb
+}
+.signUpHome:hover{
+  color: #bbb
 }
 .centeredHome {
   position: absolute;

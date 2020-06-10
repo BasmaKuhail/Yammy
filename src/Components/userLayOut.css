@@ -16,6 +16,16 @@
   font-weight: bold;
 }
 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  height: 70px;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
 
 
@@ -26,7 +36,7 @@
   top: 0;
   left: 0;
   background-color: #434A54;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .welcome{
@@ -54,7 +64,17 @@
   margin-bottom: 3px
 
 }
-
+.about{
+  font-size: 22px;
+  margin-left:15px;
+  padding-right:109px;
+  padding-left: 0px;
+  background-color:transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
 .mealType{
   color: #45E0F9;
   margin-left:14px;
@@ -107,9 +127,9 @@
 }
 
 .main {
-  margin-left: 270px; /* Same as the width of the sidenav */
+  margin-left: 240px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  margin-top: 90px;
+  padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -136,6 +156,7 @@
 }
 
 .search{
+  position: absolute;;
   top:17px;
   left: 240px;
   background-color:#55616f;
@@ -145,7 +166,6 @@
   border: none;
   padding-left: 15px;
   scrollbar-darkshadow-color: #f0f2f5;
-  position: absolute;
 }
 
 .searchbtn{
@@ -165,66 +185,70 @@
 
 }
 
-.signUp-main{
-  position: absolute;;
+.hello{
+    position: absolute;
+    top:17px;
+    left:1190px;
+    width:100px;
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+    background-color:#434A54;
+    scrollbar-darkshadow-color: #f0f2f5;
+    color: rgb(245, 80, 3);
+    font-weight: bold;
+    font-size: 16px;
 
-  top:17px;
-  left:1220px;
-  width:120px;
-  height: 35px;
-  border: none;
-  border-radius: 2px;
-  background-color:transparent;
-  scrollbar-darkshadow-color: #f0f2f5;
-  color: rgb(245, 80, 3);
-  font-weight: bold;
-  font-size: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
 
-}
+  .card-user{
+    margin-left: 245px;
+    display:inline-block;
+  }
 
-.about-us-main{
+  .about-us-user{
+    position: absolute;
+    top:17px;
+    left:980px;
+    width:90px;
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+    background-color:#434A54;
+    scrollbar-darkshadow-color: #f0f2f5;
+    color: rgb(245, 80, 3);
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+  }
+.fav-user{
   position: absolute;
   top:17px;
-  left:1105px;
-  width:120px;
+  left:1090px;
+  width:90px;
   height: 35px;
   border: none;
   border-radius: 2px;
-  background-color:transparent;
+  background-color:#434A54;
   scrollbar-darkshadow-color: #f0f2f5;
   color: rgb(245, 80, 3);
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
+
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 
 }
 
+
 .topnav button:hover{
-    background-color: #bbb;
-}
-.one-card{
-  background-color: #bbb;
-  float: left;
-  max-width: 30%;
-  max-height: 30%;
-  margin:10px;
-}
-
-
-.image{
-  height: 220px;
-  width: 250px;
-}
-.expandOpen{
-  transform: 'rotate(180deg)';
-}
-.mealName{
-  color: rgb(245, 80, 3);
-  background-color: #bbbb;
-  }
-
-  .mealName:hover{
     background-color: #bbb
-  }
+}
+.user{
+  position:absolute;
+  width:60px;
+right: 0px;
+  top:0px
+}

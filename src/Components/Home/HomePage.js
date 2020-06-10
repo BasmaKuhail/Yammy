@@ -22,8 +22,8 @@ class Home extends Component{
 
     return (
       <div>
-        <img style={{width:1353, height:636,}}
-          src={"https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}/>  
+        <img style={{width:1366, height:634,}}
+          src={"https://images.unsplash.com/photo-1547938367-b794f5532622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"}/>  
       
         <div style={{flexDirection:"row"}}>
           <a href="https://www.facebook.com/basmakuhail2003">
@@ -51,7 +51,7 @@ class Home extends Component{
       
         <div className='buttonsHome'>
         
-          <button className='aboutUs'>About us</button>
+          <button className='aboutUs' onClick={()=>this.props.history.push("about")}>About us</button>
           <button className='home' onClick={()=>this.props.history.push("Card")}>Home</button>
           <button className='signUpHome' onClick={()=>this.props.history.push("SignUp")}>
             Sign up/Login
@@ -61,8 +61,8 @@ class Home extends Component{
 
     
         <div>
-          <h1 className='heder'> Wasfa!</h1>
-          <p className='enjoy'> Enjoy cooking, Enjoy the taste</p>
+          <h1 className='heder'> Wasfa</h1>
+          <p className='enjoy'> Learn how to cook and share your recipes!</p>
           <button 
             className='explore'
             onClick={()=>this.props.history.push("Card")}>

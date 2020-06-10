@@ -22,14 +22,25 @@ class Cards extends Component{
     state={
       meals:[],
       uid:"", 
-      mealId:""
+      mealId:"",
+      favMeals:[]
     }
 
     componentDidMount(){
 
         const db = firebase.firestore();
-        const {meals} = this.state;
+        const {meals, favMeals,uid, mealId} = this.state;
         let me = this;
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              // User logged in already or has just logged in.
+              console.log(user.uid);
+              this.setState({uid:user.uid})
+            } else {
+              // User not logged in or has just logged out.
+            };
+        })
     
         db.collection("meals").get().then(function(querySnapshot) {
             querySnapshot.forEach((doc)=> {
@@ -42,40 +53,52 @@ class Cards extends Component{
                 
             });
         });
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-              // User logged in already or has just logged in.
-              console.log(user.uid);
-              this.setState({uid:user.uid})
-            } else {
-              // User not logged in or has just logged out.
-            };
-          });
+
     }
 
 
     getMealId=(clickedMealId)=> {
+        const {favMeals,uid}=this.state;
         console.log(clickedMealId);
         this.setState({mealId:clickedMealId});
         console.log(this.state.mealId);
-
         const db = firebase.firestore();
+        console.log(this.state.uid);
 
-        const {uid} = this.state;
-        console.log(this.state)
+          db.collection('mealUserId').where('currentUserUid','==',this.state.uid)
+          .get()
+          .then((querySnapshot)=> {
+            querySnapshot.forEach((doc)=> {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.id,'=>',doc.data());
+                const favMealsList=[]
+                const fetchedFavMealsId= doc.data().mealId;
+                favMealsList.push(fetchedFavMealsId)
+                console.log(favMealsList);
+                favMeals.push(fetchedFavMealsId)
+                this.setState(favMeals)
+                console.log(this.state.favMeals)
 
-        db.collection("mealUserId").add({
-            mealId: clickedMealId,
-            currentUserUid:uid
-        
-        })
-        .then( (docRef) =>{
-            this.props.history.push('/favourite')
+            })
+        }).then(()=>{
+                if (this.state.favMeals.includes(clickedMealId)){
+                    alert('This meal is already saved')
+                }
+                else{
+                db.collection("mealUserId").add({
+                    mealId: clickedMealId,
+                    currentUserUid:uid
+                
+                })
+                alert('This meal is saved')
 
-        })
-
+                
+            }
+        });
 
      }
+
+     
 
 
 
@@ -102,7 +125,7 @@ class Cards extends Component{
                                 className='media'
                                 image={meal.image}
                                 onClick={()=>this.learnMore(meal.id)}/>
-                            <CardHeader 
+                            <CardHeader
                                 className='title'
                                 title= {meal.mealName}
                                 onClick={()=>this.learnMore(meal.id)}/>
@@ -112,7 +135,6 @@ class Cards extends Component{
                                 className='expandOpen'
                                 onClick={()=>this.getMealId(meal.id)}>
                                 <img 
-                                    onClick={()=>this.src={savedFull}}
                                     className='saveCard'
                                     src={savedEmpty}/>
                                     
